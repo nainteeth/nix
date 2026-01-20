@@ -1,7 +1,7 @@
 { config, username, ... }:
 
 let
-  mkOutOfStoreSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
+  mkOutOfStoreSymlink = path: config.lib.file.mkOutOfStoreSymlink path; # The magic line! Very good
 
   # Repository location
   repoDir = "/home/${username}/NixOS-Hyprland";
@@ -30,13 +30,12 @@ in
     # Shell
     ".bashrc".source = mkOutOfStoreSymlink "${configDir}/bash/.bashrc";
 
+    # Emacs
+    ".config/doom".source = mkOutOfStoreSymlink "${configDir}/doom";
+
+
     # Git (if I plan on adding a .gitconfig)
     # ".gitconfig".source = mkOutOfStoreSymlink "${configDir}/git/.gitconfig";
 
-    # More examples:
-    # ".config/btop".source = mkOutOfStoreSymlink "${configDir}/btop";
-    # ".config/fastfetch".source = mkOutOfStoreSymlink "${configDir}/fastfetch";
-    # ".config/dunst".source = mkOutOfStoreSymlink "${configDir}/dunst";
-    # ".config/mpv".source = mkOutOfStoreSymlink "${configDir}/mpv";
   };
 }
