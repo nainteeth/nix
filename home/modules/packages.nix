@@ -36,7 +36,11 @@
     neovim
 
     # Files
-    thunar
+    xfce.thunar
+    xfce.thunar-volman
+    xfce.thunar-archive-plugin
+    kdePackages.kio-admin
+    xdg-utils
 
     # System utilities
     btop
