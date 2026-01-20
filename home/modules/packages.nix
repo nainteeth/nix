@@ -67,6 +67,9 @@
     wget
     curl
 
+    # Other
+    keepassxc
+
     # Fonts
     # THIS IS WRONG PLEASE FIX THANKS
     #(nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" "Hack" ]; })
