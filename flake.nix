@@ -26,16 +26,13 @@
       system = "x86_64-linux";
       username = "nainteeth";
 
-      # Helper function to create system configurations
       mkSystem = hostname: nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs username; };
 
         modules = [
-          # System configuration
           ./hosts/${hostname}/configuration.nix
 
-          # Home Manager
           home-manager.nixosModules.home-manager
           {
             home-manager = {
@@ -44,13 +41,11 @@
               users.${username} = import ./home;
               backupFileExtension = "backup";
 
-              # Pass extra arguments to home-manager
               extraSpecialArgs = {
                 inherit inputs hostname username;
               };
             };
 
-            # Set hostname
             networking.hostName = hostname;
           }
         ];

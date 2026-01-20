@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     # Window Manager
-    hyprland
     hyprpaper
     hypridle
     hyprlock
@@ -35,7 +34,6 @@
 
     # Editors & IDEs
     neovim
-    emacs
 
     # Files
     thunar

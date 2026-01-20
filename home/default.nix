@@ -7,7 +7,7 @@
     ./modules/packages.nix
     ./modules/session-vars.nix
 
-    # Host-specific configuration (laptop vs desktop differences)
+    # Host-specific configuration
     ./hosts/${hostname}.nix
   ];
 
@@ -17,18 +17,16 @@
 
   fonts.fontconfig.enable = true;
 
-  # Let home-manager manage itself
   programs.home-manager.enable = true;
 
   programs.git = {
     enable = true;
     userName = "nainteeth";
-    userEmail = "your.email@example.com";  # Change this
+    userEmail = "knusperpommes@gmail.com";
   };
 
   programs.bash = {
     enable = true;
-    # bashrc is managed via dotfiles symlink
   };
 
   programs.starship = {
