@@ -4,7 +4,7 @@ let
   mkOutOfStoreSymlink = path: config.lib.file.mkOutOfStoreSymlink path; # The magic line! Very good
 
   # Repository location
-  repoDir = "/home/${username}/NixOS-Hyprland";
+  repoDir = "/home/${username}/nix";
   configDir = "${repoDir}/dotfiles";
 in
 {
@@ -23,12 +23,6 @@ in
 
     # Launcher
     ".config/wofi".source = mkOutOfStoreSymlink "${configDir}/wofi";
-
-    # Starship prompt (could be configured via home-manager instead)
-    ".config/starship.toml".source = mkOutOfStoreSymlink "${configDir}/starship/starship.toml";
-
-    # Shell
-    ".bashrc".source = mkOutOfStoreSymlink "${configDir}/bash/.bashrc";
 
     # Emacs
     ".config/doom".source = mkOutOfStoreSymlink "${configDir}/doom";

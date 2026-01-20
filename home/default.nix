@@ -5,7 +5,8 @@
     # Core modules
     ./modules/dotfiles.nix
     ./modules/packages.nix
-    ./modules/session-vars.nix
+    ./modules/env-vars.nix
+    ./modules/shell.nix
 
     # Host-specific configuration
     ./hosts/${hostname}.nix
@@ -23,14 +24,5 @@
     enable = true;
     userName = "nainteeth";
     userEmail = "knusperpommes@gmail.com";
-  };
-
-  programs.bash = {
-    enable = true;
-  };
-
-  programs.starship = {
-    enable = true;
-    enableBashIntegration = true;
   };
 }

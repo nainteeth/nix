@@ -5,13 +5,15 @@
     ./hardware-configuration.nix
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub = {
+    enable = true;
+    device = "/dev/sda";
+  };
 
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Berlin";
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "de_DE.UTF-8";
 
   programs.hyprland = {
     enable = true;
@@ -74,6 +76,8 @@
 
   # Laptop-specific: Enable touchpad support
   services.libinput.enable = true;
+
+  console.keyMap = "de";
 
   system.stateVersion = "25.05";
 }

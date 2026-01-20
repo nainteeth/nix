@@ -64,6 +64,7 @@
     curl
 
     # Fonts
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" "Hack" ]; })
+    # THIS IS WRONG PLEASE FIX THANKS
+    #(nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" "Hack" ]; })
   ];
 }
