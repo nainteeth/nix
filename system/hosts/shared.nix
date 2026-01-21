@@ -48,5 +48,4 @@
 
     console.keyMap = "de";
     system.stateVersion = "25.05";
-  };
 }
