@@ -35,7 +35,7 @@
     shell = pkgs.bash;
     };
 
-    environment.system.Packages = with pkgs; [
+    environment.systemPackages = with pkgs; [
       vim
       wget
       curl
