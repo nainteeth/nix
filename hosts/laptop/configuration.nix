@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/system/doom.nix
   ];
 
   boot.loader.grub = {
