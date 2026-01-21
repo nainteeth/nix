@@ -14,7 +14,21 @@
     xwayland.enable = true;
   };
 
-  # AMD GPU drivers
+  environment.systemPackages = with pkgs; [
+    libwacom
+    libinput
+    wootility
+  ];
+
+  # OSU! starter pack
+  hardware.opentabletdriver.enable = true;
+  hardware.wooting.enable = true;
+  services.udev.extraRules = ''
+  SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", MODE="0666", GROUP="input"
+  SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", MODE="0666", GROUP="input"
+  '';
+
+  # AMD GPU drivers | Do I even need to configure these? Idk
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
 }

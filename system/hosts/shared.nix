@@ -41,7 +41,11 @@
       curl
       git
     ];
-    
+
+    services.flatpak.enable = true;
+
+    programs.ssh.startAgent = true;
+
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     nixpkgs.config.allowUnfree = true;
