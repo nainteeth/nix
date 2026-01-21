@@ -7,6 +7,7 @@
     ./modules/packages.nix
     ./modules/env-vars.nix
     ./modules/shell.nix
+    ./modules/emacs.nix
 
     # Host-specific configuration
     ./hosts/${hostname}.nix
