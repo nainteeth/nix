@@ -33,6 +33,7 @@
       "audio"
     ];
     shell = pkgs.bash;
+    };
 
     environment.system.Packages = with pkgs; [
       vim
