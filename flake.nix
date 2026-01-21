@@ -31,7 +31,7 @@
         specialArgs = { inherit inputs username; };
 
         modules = [
-          ./hosts/${hostname}/configuration.nix
+          ./system/hosts/${hostname}/configuration.nix
 
           home-manager.nixosModules.home-manager
           {

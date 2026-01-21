@@ -5,7 +5,7 @@ let
 
   # Repository location
   repoDir = "/home/${username}/nix";
-  configDir = "${repoDir}/dotfiles";
+  configDir = "${repoDir}/home/dotfiles";
 in
 {
   home.file = {
