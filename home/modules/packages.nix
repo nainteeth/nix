@@ -9,6 +9,7 @@
     waybar
     wofi
     dunst
+    swww
 
     # Terminal & Shell
     kitty

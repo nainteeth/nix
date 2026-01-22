@@ -6,6 +6,9 @@
     ../modules/doom.nix
   ];
   networking.networkmanager.enable = true;
+  services.displayManager.ly = {
+    enable = true;
+  };
   
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "de_DE.UTF-8";
