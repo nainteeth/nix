@@ -3,10 +3,9 @@
 {
   # Starship prompt
   programs.starship = {
-    enable = true; 
+    enable = false; 
     enableBashIntegration = true;
     # Config is in dotfiles/starship/starship.toml (via mkOutOfStoreSymlink)
-    # Could be changed since its not really necessary
   };
 
   programs.bash = {
