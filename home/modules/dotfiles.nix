@@ -26,14 +26,6 @@ in
 
     # Emacs
     ".config/doom".source = mkOutOfStoreSymlink "${configDir}/doom";
-    home.file.".doom.d/themes/doom-compline-theme.el" = {
-      source = config.lib.file.mkOutOfStoreSymlink 
-        "${config.home.homeDirectory}/nixos-config/dotfiles/compline/doom emacs/doom-compline-theme.el";
-    };
-    home.file.".doom.d/themes/doom-lauds-theme.el" = {
-      source = config.lib.file.mkOutOfStoreSymlink 
-        "${config.home.homeDirectory}/nixos-config/dotfiles/compline/doom emacs/doom-lauds-theme.el";
-    };
 
     # Git (if I plan on adding a .gitconfig)
     # ".gitconfig".source = mkOutOfStoreSymlink "${configDir}/git/.gitconfig";

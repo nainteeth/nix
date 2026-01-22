@@ -21,7 +21,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, zen-browser, ... }@inputs:
     let
       system = "x86_64-linux";
       username = "nainteeth";
@@ -42,7 +42,7 @@
               backupFileExtension = "backup";
 
               extraSpecialArgs = {
-                inherit inputs hostname username;
+                inherit inputs hostname username zen-browser;
               };
             };
 

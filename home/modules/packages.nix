@@ -24,7 +24,7 @@
 
     # Browsers
     firefox
-    # Add zen-browser
+    chromium
 
     # Media
     vlc
@@ -34,13 +34,6 @@
 
     # Editors & IDEs
     neovim
-
-    # Files
-    xfce.thunar
-    xfce.thunar-volman
-    xfce.thunar-archive-plugin
-    kdePackages.kio-admin
-    xdg-utils
 
     # System utilities
     btop
@@ -71,7 +64,13 @@
     keepassxc
 
     # Fonts
-    # THIS IS WRONG PLEASE FIX THANKS
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.hack
+    nerd-fonts.meslo-lg
+    nerd-fonts.symbols-only
+    nerd-fonts.ubuntu-mono
+
     #(nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" "Hack" ]; })
   ];
 }
