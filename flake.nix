@@ -28,7 +28,7 @@
 
       mkSystem = hostname: nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs username; };
+        specialArgs = { inherit inputs username system; };
 
         modules = [
           ./system/hosts/${hostname}/configuration.nix
@@ -42,7 +42,7 @@
               backupFileExtension = "backup";
 
               extraSpecialArgs = {
-                inherit inputs hostname username zen-browser;
+                inherit inputs hostname username zen-browser system;
               };
             };
 
@@ -52,7 +52,6 @@
       };
     in
     {
-      # Your two systems
       nixosConfigurations = {
         laptop = mkSystem "laptop";
         desktop = mkSystem "desktop";
