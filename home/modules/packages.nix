@@ -24,7 +24,7 @@
 
     # Browsers
     firefox
-    # Add zen-browser
+    chromium
 
     # Media
     vlc
@@ -34,13 +34,6 @@
 
     # Editors & IDEs
     neovim
-
-    # Files
-    xfce.thunar
-    xfce.thunar-volman
-    xfce.thunar-archive-plugin
-    kdePackages.kio-admin
-    xdg-utils
 
     # System utilities
     btop

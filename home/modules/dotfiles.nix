@@ -27,7 +27,6 @@ in
     # Emacs
     ".config/doom".source = mkOutOfStoreSymlink "${configDir}/doom";
 
-
     # Git (if I plan on adding a .gitconfig)
     # ".gitconfig".source = mkOutOfStoreSymlink "${configDir}/git/.gitconfig";
 
