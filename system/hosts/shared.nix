@@ -40,6 +40,7 @@
       wget
       curl
       git
+      jq
     ];
 
     services.flatpak.enable = true;

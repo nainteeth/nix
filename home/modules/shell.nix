@@ -11,6 +11,9 @@
 
   programs.bash = {
     enable = true;
+    initExtra = ''
+      ssh-add -l &>/dev/null || ssh-add ~/.ssh/github 2>/dev/null
+    '';
   };
 
   # Terminal file manager
