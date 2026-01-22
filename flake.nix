@@ -21,7 +21,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, zen-browser, ... }@inputs:
     let
       system = "x86_64-linux";
       username = "nainteeth";
