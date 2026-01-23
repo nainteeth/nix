@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../shared.nix
+    ../../modules/default.nix
   ];
 
   boot.loader.grub = {

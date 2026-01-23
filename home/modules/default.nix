@@ -1,17 +1,18 @@
 { config, lib, pkgs, inputs, hostname, username, ... }:
 
 {
+  # Nested imports!
   imports = [
     # Core modules
-    ./modules/dotfiles.nix
-    ./modules/packages.nix
-    ./modules/env-vars.nix
-    ./modules/shell.nix
-    ./modules/emacs.nix
-    ./modules/zen-browser.nix
+    ./dotfiles.nix
+    ./packages.nix
+    ./env-vars.nix
+    ./shell.nix
+    ./emacs.nix
+    ./zen-browser.nix
 
     # Host-specific configuration
-    ./hosts/${hostname}.nix
+    ../hosts/${hostname}.nix
   ];
 
   home.username = username;

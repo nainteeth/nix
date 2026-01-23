@@ -38,7 +38,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.${username} = import ./home;
+              users.${username} = import ./home; # A variable is used here to add more users in the future
               backupFileExtension = "backup";
 
               extraSpecialArgs = {
