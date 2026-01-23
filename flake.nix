@@ -23,16 +23,14 @@
 
   outputs = { self, nixpkgs, home-manager, zen-browser, nix-flatpak, ... }@inputs:
     let
-      system = "x86_64-linux";
       username = "nainteeth";
 
       mkSystem = hostname: nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs username system nix-flatpak; };
+        specialArgs = { inherit inputs username nix-flatpak; };
 
         modules = [
           ./system/hosts/${hostname}/configuration.nix
-
+          { nixpkgs.hostPlatform = "x86_64-linux"; }
           home-manager.nixosModules.home-manager
           {
             home-manager = {
@@ -42,7 +40,7 @@
               backupFileExtension = "backup";
 
               extraSpecialArgs = {
-                inherit inputs hostname username zen-browser system nix-flatpak;
+                inherit inputs hostname username zen-browser nix-flatpak;
               };
             };
 
