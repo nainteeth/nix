@@ -23,5 +23,6 @@
     shfmt
     graphviz
     emacs-all-the-icons-fonts
+    python3
   ];
 }
