@@ -1,7 +1,7 @@
 { config, username, ... }:
 
 let
-  mkOutOfStoreSymlink = path: config.lib.file.mkOutOfStoreSymlink path; # The magic line! Very good
+  mkOutOfStoreSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
 
   # Repository location
   repoDir = "/home/${username}/nix";
@@ -29,9 +29,6 @@ in
 
     # SwayNC (Notifications)
     ".config/swaync".source = mkOutOfStoreSymlink "${configDir}/swaync";
-
-    # Git (if I plan on adding a .gitconfig)
-    # ".gitconfig".source = mkOutOfStoreSymlink "${configDir}/git/.gitconfig";
 
   };
 }
