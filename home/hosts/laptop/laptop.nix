@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+
+  imports = [
+    ../../modules/default.nix
+  ];
+
   # Laptop-specific stuff
   home.packages = with pkgs; [
     # Power management

@@ -3,7 +3,7 @@
 {
   # nested imports are pretty cool
   imports = [
-    ../doom.nix
+    ./doom.nix
   ];
   networking.networkmanager.enable = true;
   services.displayManager.ly = {

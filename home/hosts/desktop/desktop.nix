@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ../../modules/default.nix
+  ];
+
   # Desktop-specific stuff
   home.packages = with pkgs; [
     steam

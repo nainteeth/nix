@@ -1,7 +1,6 @@
 { config, lib, pkgs, inputs, hostname, username, ... }:
 
 {
-  # Nested imports!
   imports = [
     # Core modules
     ./dotfiles.nix
@@ -10,9 +9,7 @@
     ./shell.nix
     ./emacs.nix
     ./zen-browser.nix
-
-    # Host-specific configuration
-    ../hosts/${hostname}.nix
+    ./flatpak.nix
   ];
 
   home.username = username;
