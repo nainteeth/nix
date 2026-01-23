@@ -8,8 +8,8 @@
     hyprlock
     waybar
     wofi
-    dunst
     swww
+    swaynotificationcenter
 
     # Terminal & Shell
     kitty
@@ -71,7 +71,5 @@
     nerd-fonts.meslo-lg
     nerd-fonts.symbols-only
     nerd-fonts.ubuntu-mono
-
-    #(nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" "Hack" ]; })
   ];
 }

@@ -3,7 +3,7 @@
 {
   imports = [
     ../../modules/dotfiles.nix
-    ../../modules/packages.nix
+    ../../modules/defaultPackages.nix
     ../../modules/env-vars.nix
     ../../modules/shell.nix
     ../../modules/emacs.nix

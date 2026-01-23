@@ -4,16 +4,18 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/doom.nix
+    ../../modules/defaultPackages.nix
+    ../../modules/hyprland.nix
+  ];
+
+  # Laptop specific packages
+  environment.systemPackages = with pkgs; [
+
   ];
 
   boot.loader.grub = {
     enable = true;
     device = "/dev/sda";
-  };
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
   };
 
   services.tlp = {
@@ -40,11 +42,11 @@
     jack.enable = true;
   };
 
+  programs.ssh.startAgent = true;
+  services.flatpak.enable = true;
   services.printing.enable = true;
-
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-
   hardware.enableAllFirmware = true;
 
   users.users.${username} = {
@@ -58,32 +60,6 @@
     ];
   shell = pkgs.bash;
   };
-
-  environment.systemPackages = with pkgs; [
-    vim
-    networkmanager
-    networkmanagerapplet
-    wget
-    curl
-    git
-    jq
-    libreoffice
-    flatpak
-    thunar
-    thunar-volman
-    thunar-archive-plugin
-    libnotify
-    gammastep
-    xdg-utils
-    kdePackages.kdeconnect-kde
-    kdePackages.kio-admin
-    gimp3-with-plugins
-    bibata-cursors
-  ];
-
-  services.flatpak.enable = true;
-
-  programs.ssh.startAgent = true;
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];

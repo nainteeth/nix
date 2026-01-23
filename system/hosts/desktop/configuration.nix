@@ -4,15 +4,17 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/doom.nix
+    ../../modules/defaultPackages.nix
+    ../../modules/hyprland.nix
+  ];
+
+  # Desktop specific packages
+  environment.systemPackages = with pkgs; [
+
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
 
   # OSU! starter pack
   hardware.opentabletdriver.enable = true;

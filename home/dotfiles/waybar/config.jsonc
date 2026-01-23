@@ -1,29 +1,9 @@
 {
     "height": 30, // Waybar height (to be removed for auto height)
     "spacing": 2, // Gaps between modules (4px)
-    // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["mpd"],
-    // "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "battery", "battery#bat2", "clock", "tray"],
-    "modules-right": ["pulseaudio", "network", "battery", "clock", "tray"],
-    // Modules configuration
-    // "hyprland/workspaces": {
-    //      "disable-scroll": true,
-    //      "all-outputs": true,
-    //      "format": "{name}: {icon}",
-    //      "format-icons": {
-    //          "1": "",
-    //          "2": "",
-    //          "3": "",
-    //          "4": "",
-    //          "5": "",
-    //          "8": "Ⅷ.",
-    //          "9": "Ⅸ.",
-    //          "urgent": "",
-    //          "focused": "",
-    //          "default": ""
-    //      }
-    //  },
+    "modules-center": [],
+    "modules-right": ["pulseaudio", "battery", "clock", "tray"],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -95,13 +75,6 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
     "tray": {
         // "icon-size": 21,
         "spacing": 8
@@ -126,11 +99,6 @@
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
         "states": {
@@ -170,16 +138,4 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        // "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
 }
