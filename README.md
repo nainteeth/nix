@@ -1,4 +1,4 @@
-# NixOS Configuration with Hyprland and Doom Emacs
+# NixOS Configuration
 
 This repository contains my NixOS configuration using Hyprland, `mkOutOfStoreSymlinks`, and Doom Emacs.
 
@@ -38,9 +38,7 @@ This repository contains my NixOS configuration using Hyprland, `mkOutOfStoreSym
     ```bash
     git remote set-url origin git@github.com:nainteeth/nix.git
     ```
-
-5. If Git does not work immediately, reboot the system.
-
+    
 ## Installing Doom Emacs
 
 1. Remove any existing `.emacs.d` directory:
@@ -58,7 +56,7 @@ This repository contains my NixOS configuration using Hyprland, `mkOutOfStoreSym
     ~/.emacs.d/bin/doom install
     ```
 
-4. Rebuild Doom Emacs periodically:
+4. Rebuild Doom Emacs:
     ```bash
     doom sync
     ```
