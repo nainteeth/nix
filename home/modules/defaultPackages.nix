@@ -63,6 +63,8 @@
 
     # Other
     keepassxc
+    waypaper
+    hyprpicker
 
     # Fonts
     nerd-fonts.fira-code
