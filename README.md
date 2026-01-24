@@ -10,6 +10,8 @@ For ssh for github:
 ssh-keygen -t ed25519 -C "CHANGEME@PLEASE.com" -f ~/.ssh/github 
 cat ~/.ssh/github.pub
 Copy this and add it to your ssh keys on github
+cd nix
+git remote set-url origin git@github.com:nainteeth/nix.git
 If its not working immediately: reboot
 
 For Doom Emacs:
