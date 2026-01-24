@@ -22,6 +22,7 @@
     cliphist
     playerctl
     pamixer
+    pavucontrol
 
     # Browsers
     firefox
