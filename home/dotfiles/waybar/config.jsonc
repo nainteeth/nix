@@ -1,7 +1,7 @@
 {
     "height": 30, // Waybar height
     "spacing": 2, // Gaps between modules (4px)
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": [],
     "modules-right": ["tray", "pulseaudio", "battery", "clock"],
 
