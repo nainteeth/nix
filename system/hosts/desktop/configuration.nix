@@ -24,10 +24,6 @@
   SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", MODE="0666", GROUP="input"
   '';
 
-  # AMD GPU drivers | Do I even need to configure these? Idk
-  hardware.opengl.driSupport = true;
-  hardware.opengl.driSupport32Bit = true;
-
   networking.networkmanager.enable = true;
   services.displayManager.ly = {
     enable = true;

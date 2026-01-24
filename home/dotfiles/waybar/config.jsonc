@@ -4,18 +4,15 @@
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": [],
     "modules-right": ["pulseaudio", "battery", "clock", "tray"],
+
     "hyprland/workspaces": {
         "disable-scroll": true,
-        "all-outputs": true,
         "format": "{icon}",
         "persistent-workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": []
+            "DP-1": [1, 2, 3, 4, 5],
+            "DP-2": [6, 7, 8, 9, 10],
+            "eDP-1": [1, 2, 3, 4, 5],
+            "*": [1, 2, 3, 4, 5]
         },
         "format-icons": {
             "1": "Ⅰ",
@@ -23,13 +20,17 @@
             "3": "Ⅲ",
             "4": "Ⅳ",
             "5": "Ⅴ",
-            "6": "Ⅵ",
-            "7": "Ⅶ",
-            "urgent": "",
-            "focused": "",
-            "default": ""
+
+            "6": "Ⅰ",
+            "7": "Ⅱ",
+            "8": "Ⅲ",
+            "9": "Ⅳ",
+            "10": "Ⅴ",
+            "urgent": "",
+            "focused": "",
+            "default": ""
         }
-     },
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
