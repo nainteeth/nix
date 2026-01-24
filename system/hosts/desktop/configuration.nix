@@ -13,6 +13,11 @@
 
   ];
 
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -23,6 +28,15 @@
   SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", MODE="0666", GROUP="input"
   SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", MODE="0666", GROUP="input"
   '';
+
+  # This adds GDK_SCALE for steam
+  nixpkgs.overlays = [
+    (final: prev: {
+      steam = prev.steam.override {
+        extraProfile = "export GDK_SCALE=1";
+      };
+    })
+  ];
 
   networking.networkmanager.enable = true;
   services.displayManager.ly = {

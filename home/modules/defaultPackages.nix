@@ -31,7 +31,6 @@
     vlc
     mpv
     spotify
-    # spicetify-cli from inputs
 
     # Editors & IDEs
     neovim
@@ -40,6 +39,7 @@
     btop
     htop
     fastfetch
+    xorg.xrdb
 
     # Archive tools
     unzip

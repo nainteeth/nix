@@ -9,13 +9,18 @@
     QT_QPA_PLATFORM = "wayland";
     SDL_VIDEODRIVER = "wayland";
     XDG_SESSION_TYPE = "wayland";
+    GDK_SCALE = "2";
 
     # Hyprland
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_DESKTOP = "Hyprland";
 
     # Editor
-    EDITOR = "nvim";
-    VISUAL = "nvim";
+    EDITOR = "emacs";
+    VISUAL = "emacs";
+  };
+
+  xresources.properties = {
+    "Xft.dpi" = 192;
   };
 }
