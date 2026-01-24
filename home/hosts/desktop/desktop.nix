@@ -15,7 +15,6 @@
   # Desktop-specific stuff
   home.packages = with pkgs; [
     lutris
-    steam
     gamemode
     mangohud
   ];

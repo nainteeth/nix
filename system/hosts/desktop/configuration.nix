@@ -18,6 +18,19 @@
     enable32Bit = true;
   };
 
+programs.steam = {
+    enable = true;
+    package = pkgs.steam.override {
+      extraProfile = ''
+        export GDK_SCALE=1
+        export GDK_DPI_SCALE=1
+        export QT_AUTO_SCREEN_SCALE_FACTOR=0
+        export QT_SCALE_FACTOR=1
+      '';
+      extraArgs = "-forcedesktopscaling 1.0 -no-force-device-scale-factor";
+    };
+  };
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -28,15 +41,6 @@
   SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", MODE="0666", GROUP="input"
   SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", MODE="0666", GROUP="input"
   '';
-
-  # This adds GDK_SCALE for steam
-  nixpkgs.overlays = [
-    (final: prev: {
-      steam = prev.steam.override {
-        extraProfile = "export GDK_SCALE=1";
-      };
-    })
-  ];
 
   networking.networkmanager.enable = true;
   services.displayManager.ly = {

@@ -21,5 +21,6 @@
     kdePackages.kio-admin
     gimp3-with-plugins
     bibata-cursors
+    spotify
   ];
 }

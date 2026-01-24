@@ -30,7 +30,6 @@
     # Media
     vlc
     mpv
-    spotify
 
     # Editors & IDEs
     neovim
