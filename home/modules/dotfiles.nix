@@ -1,4 +1,4 @@
-{ config, username, ... }:
+{ config, username, hostname, ... }:
 
 let
   mkOutOfStoreSymlink = path: config.lib.file.mkOutOfStoreSymlink path;

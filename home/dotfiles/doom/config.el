@@ -79,3 +79,4 @@
 ;; they are implemented.
 
 (setq which-key-idle-delay 0)
+(setq make-backup-files nil)
