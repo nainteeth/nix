@@ -63,7 +63,7 @@ This repository contains my NixOS configuration using Hyprland, `mkOutOfStoreSym
 
 ## Steam Scaling
 
-Open Steam, go to Settings > Interface, and ensure "Scale text and icons to match monitor settings" is toggled OFF. If this is ON, Steam will ignore all environment variables.
+If you want to use environment variables to scale Steam, you will have to follow these steps: Open Steam, go to Settings > Interface, and ensure "Scale text and icons to match monitor settings" is toggled OFF. If this is ON, Steam will ignore all environment variables.
 
 ## Spotify Scaling
 
