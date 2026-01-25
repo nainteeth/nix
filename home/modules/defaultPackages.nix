@@ -65,6 +65,7 @@
     keepassxc
     waypaper
     hyprpicker
+    signal-desktop
 
     # Fonts
     nerd-fonts.fira-code
