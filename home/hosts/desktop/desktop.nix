@@ -17,6 +17,7 @@
     lutris
     gamemode
     mangohud
+    prismlauncher
   ];
 
   home.sessionVariables = {
