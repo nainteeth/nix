@@ -47,6 +47,26 @@ programs.steam = {
     enable = true;
   };
 
+  # This is needed for UxPlay to work
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;  # Enable mDNS resolution for NSS
+    openFirewall = true;
+    publish = {
+      enable = true;
+      addresses = true;
+      domain = true;
+      hinfo = true;
+      userServices = true;
+      workstation = true;
+    };
+  };
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 7000 7001 7100 ];
+    allowedUDPPorts = [ 5353 6000 6001 7011 ];
+  };
+
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "de_DE.UTF-8";
 
