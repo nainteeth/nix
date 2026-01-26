@@ -20,7 +20,4 @@
     VISUAL = "emacs";
   };
 
-  xresources.properties = {
-    "Xft.dpi" = 192;
-  };
 }

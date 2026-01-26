@@ -20,6 +20,11 @@
     prismlauncher
   ];
 
+  # Emacs 2x Scale
+  xresources.properties = {
+    "Xft.dpi" = 192;
+  };
+
   home.sessionVariables = {
     # Gaming optimizations that maybe work. Do some research before uncommenting these
     # __GL_SHADER_DISK_CACHE = "1";
