@@ -23,6 +23,7 @@
     playerctl
     pamixer
     pavucontrol
+    uxplay
 
     # Browsers
     firefox
