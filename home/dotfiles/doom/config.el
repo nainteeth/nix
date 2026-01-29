@@ -80,3 +80,6 @@
 
 (setq which-key-idle-delay 0)
 (setq make-backup-files nil)
+(setq-default tab-width 4
+              indent-tabs-mode nil
+              standard-indent 4)

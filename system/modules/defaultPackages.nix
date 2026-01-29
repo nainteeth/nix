@@ -38,4 +38,5 @@
       '';
     })
   ];
+  programs.java.enable = true;
 }

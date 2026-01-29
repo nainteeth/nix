@@ -51,6 +51,7 @@
     # Development
     git
     gh
+    jetbrains.idea
 
     # CLI tools
     ripgrep
