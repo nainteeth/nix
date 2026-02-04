@@ -35,6 +35,7 @@
 
     # Editors & IDEs
     neovim
+    jetbrains.idea
 
     # System utilities
     btop
@@ -51,7 +52,7 @@
     # Development
     git
     gh
-    jetbrains.idea
+    processing
 
     # CLI tools
     ripgrep

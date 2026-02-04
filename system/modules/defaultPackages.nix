@@ -21,6 +21,7 @@
     kdePackages.kio-admin
     gimp3-with-plugins
     bibata-cursors
+    cloudflare-warp
     spotify
     # These fixes dont quite work yet. Use ctrl - while in spotify to scale down.
     (pkgs.symlinkJoin {

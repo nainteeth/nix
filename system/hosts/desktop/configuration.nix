@@ -10,7 +10,7 @@
 
   # Desktop specific packages
   environment.systemPackages = with pkgs; [
-
+    mullvad-vpn
   ];
 
   hardware.graphics = {
@@ -43,6 +43,14 @@ programs.steam = {
   '';
 
   networking.networkmanager.enable = true;
+
+  # Trying to play hypixel skyblock in eu
+  services.cloudflare-warp.enable = true;
+  networking = {
+    nameservers = [ "1.1.1.1" "8.8.8.8" ];
+  };
+  services.mullvad-vpn.enable = true;
+
   services.displayManager.ly = {
     enable = true;
   };
