@@ -1,0 +1,3 @@
+[submodule "home/dotfiles/nvim"]
+	path = home/dotfiles/nvim
+	url = git@github.com:nainteeth/nvim.git
