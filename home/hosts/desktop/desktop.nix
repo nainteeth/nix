@@ -10,6 +10,7 @@
     ../../modules/zen-browser.nix
     ../../modules/flatpak.nix
     ../../modules/git.nix
+    ../../modules/development.nix
   ];
 
   # Desktop-specific stuff
