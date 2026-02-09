@@ -11,6 +11,7 @@
   # Desktop specific packages
   environment.systemPackages = with pkgs; [
     mullvad-vpn
+    polychromatic # Frontend für open razer
   ];
 
   hardware.graphics = {
@@ -33,6 +34,9 @@ programs.steam = {
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Razer mouse
+  hardware.openrazer.enable = true;
 
   # OSU! starter pack
   hardware.opentabletdriver.enable = true;
