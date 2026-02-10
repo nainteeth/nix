@@ -37,6 +37,7 @@ programs.steam = {
 
   # Razer mouse
   hardware.openrazer.enable = true;
+  hardware.openrazer.users =  ["nainteeth"];
 
   # OSU! starter pack
   hardware.opentabletdriver.enable = true;
