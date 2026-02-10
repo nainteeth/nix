@@ -12,6 +12,7 @@
   environment.systemPackages = with pkgs; [
     mullvad-vpn
     polychromatic # Frontend für open razer
+    input-remapper
   ];
 
   hardware.graphics = {
@@ -38,6 +39,7 @@ programs.steam = {
   # Razer mouse
   hardware.openrazer.enable = true;
   hardware.openrazer.users =  ["nainteeth"];
+  services.input-remapper.enable = true;
 
   # OSU! starter pack
   hardware.opentabletdriver.enable = true;
