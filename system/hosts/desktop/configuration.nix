@@ -105,6 +105,7 @@ programs.steam = {
       "networkmanager"
       "video"
       "audio"
+      "plugdev"
     ];
   shell = pkgs.bash;
   };
