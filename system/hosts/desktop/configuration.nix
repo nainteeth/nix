@@ -13,6 +13,7 @@
     mullvad-vpn
     polychromatic # Frontend für open razer
     input-remapper
+    polkit_gnome
   ];
 
   hardware.graphics = {
@@ -35,6 +36,9 @@ programs.steam = {
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  security.polkit.enable = true;
+  services.dbus.enable = true;
 
   # Razer mouse
   hardware.openrazer.enable = true;
@@ -116,6 +120,20 @@ programs.steam = {
   services.flatpak.enable = true;
 
   programs.ssh.startAgent = true;
+
+  systemd.user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+	Type = "simple";
+	ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+	Restart = "on-failure";
+	RestartSec = 1;
+	TimeoutStopSec = 10;
+      };
+    };
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];

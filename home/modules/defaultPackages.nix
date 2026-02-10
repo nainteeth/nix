@@ -16,8 +16,6 @@
     starship
 
     # Screenshots & Media
-    grim
-    slurp
     wl-clipboard
     cliphist
     playerctl
@@ -78,4 +76,8 @@
     nerd-fonts.symbols-only
     nerd-fonts.ubuntu-mono
   ];
+  programs.hyprshot = {
+    enable = true;
+    saveLocation = "$HOME/Bilder/screenshots";
+  };
 }
