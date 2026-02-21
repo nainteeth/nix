@@ -10,7 +10,7 @@
         vterm
         pdf-tools
         org-roam
-        treesit-grammars.with-all-grammars
+        #treesit-grammars.with-all-grammars
         mu4e
       ];
   };
