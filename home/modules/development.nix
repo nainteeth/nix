@@ -12,5 +12,6 @@
         julia
         python3
         tree-sitter
+        clang
     ];
 }
