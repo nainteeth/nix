@@ -8,11 +8,11 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "text/html" = "zen-browser.desktop";
-      "x-scheme-handler/http" = "zen-browser.desktop";
-      "x-scheme-handler/https" = "zen-browser.desktop";
-      "x-scheme-handler/about" = "zen-browser.desktop";
-      "x-scheme-handler/unknown" = "zen-browser.desktop";
+      "text/html" = "zen-beta.desktop";
+      "x-scheme-handler/http" = "zen-beta.desktop";
+      "x-scheme-handler/https" = "zen-beta.desktop";
+      "x-scheme-handler/about" = "zen-beta.desktop";
+      "x-scheme-handler/unknown" = "zen-beta.desktop";
     };
   };
 
@@ -41,6 +41,7 @@
         "toolkit.telemetry.enabled" = false;
         "toolkit.telemetry.unified" = false;
         "toolkit.telemetry.server" = "";
+      };
 
       search = {
         force = true;
@@ -55,5 +56,4 @@
       };
     };
   };
-};
 }
