@@ -14,7 +14,7 @@
     };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland.git?ref=refs/pull/12890/head"; # stability is overrated
+    hyprland.url = "github:hyprwm/Hyprland"; # stability is overrated
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -1,4 +1,7 @@
-{ config, lib, pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
@@ -22,6 +25,7 @@
     gimp3-with-plugins
     bibata-cursors
     cloudflare-warp
+    statix # package for neovim for .nix files
     spotify
     # These fixes dont quite work yet. Use ctrl - while in spotify to scale down.
     (pkgs.symlinkJoin {
