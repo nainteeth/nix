@@ -1,4 +1,4 @@
-{ config, username, hostname, ... }:
+{ config, username, ... }:
 
 let
   mkOutOfStoreSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
@@ -30,5 +30,7 @@ in
     # SwayNC (Notifications)
     ".config/swaync".source = mkOutOfStoreSymlink "${configDir}/swaync";
 
+    # Noctalia Shell
+    ".config/noctalia".source = mkOutOfStoreSymlink "${configDir}/noctalia";
   };
 }

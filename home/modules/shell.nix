@@ -3,7 +3,7 @@
 {
   # Starship prompt
   programs.starship = {
-    enable = true; 
+    enable = true;
     enableBashIntegration = true;
     # Config is in dotfiles/starship/starship.toml (via mkOutOfStoreSymlink)
   };
@@ -17,7 +17,7 @@
 
   # Terminal file manager
   programs.yazi = {
-    enable = true;
+    enable = false;
     enableBashIntegration = true;
   };
 }

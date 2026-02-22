@@ -1,4 +1,8 @@
-{ config, pkgs, username, ... }:
+{
+  pkgs,
+  username,
+  ...
+}:
 
 {
   imports = [
@@ -11,6 +15,7 @@
     ../../modules/flatpak.nix
     ../../modules/git.nix
     ../../modules/development.nix
+    ../../modules/noctalia.nix
   ];
 
   # Desktop-specific stuff

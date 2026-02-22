@@ -20,6 +20,8 @@
     enable = true;
     package = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
+    suppressXdgMigrationWarning = true;
+
     profiles.default = {
       id = 0;
       name = "default";
@@ -48,9 +50,9 @@
         default = "ddg";
         engines = {
           "My NixOS" = {
-            urls = [{ template = "https://mynixos.com/search?q={searchTerms}"; }];
+            urls = [ { template = "https://mynixos.com/search?q={searchTerms}"; } ];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = ["@nx"];
+            definedAliases = [ "@nx" ];
           };
         };
       };

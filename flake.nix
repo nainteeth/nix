@@ -14,35 +14,68 @@
     };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland.git?ref=refs/pull/12890/head"; # stability is overrated
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser, nix-flatpak, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      zen-browser,
+      nix-flatpak,
+      hyprland,
+      noctalia,
+      ...
+    }@inputs:
     let
       username = "nainteeth";
 
-      mkSystem = hostname: nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs username nix-flatpak; };
+      mkSystem =
+        hostname:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit
+              inputs
+              username
+              nix-flatpak
+              hyprland
+              noctalia
+              ;
+          };
 
-        modules = [
-          ./system/hosts/${hostname}/configuration.nix
-          { nixpkgs.hostPlatform = "x86_64-linux"; }
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.${username} = import ./home/hosts/${hostname}/${hostname}.nix;
-              backupFileExtension = "backup";
+          modules = [
+            ./system/hosts/${hostname}/configuration.nix
+            { nixpkgs.hostPlatform = "x86_64-linux"; }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.${username} = import ./home/hosts/${hostname}/${hostname}.nix;
+                backupFileExtension = "backup";
 
-              extraSpecialArgs = {
-                inherit inputs hostname username zen-browser nix-flatpak;
+                extraSpecialArgs = {
+                  inherit
+                    inputs
+                    hostname
+                    username
+                    zen-browser
+                    nix-flatpak
+                    hyprland
+                    noctalia
+                    ;
+                };
               };
-            };
 
-            networking.hostName = hostname;
-          }
-        ];
-      };
+              networking.hostName = hostname;
+            }
+          ];
+        };
     in
     {
       nixosConfigurations = {

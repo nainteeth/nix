@@ -1,4 +1,7 @@
-{ config, pkgs, inputs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
@@ -39,7 +42,7 @@
     btop
     htop
     fastfetch
-    xorg.xrdb
+    xrdb
 
     # Archive tools
     unzip

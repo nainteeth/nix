@@ -1,4 +1,8 @@
-{ config, username, pkgs, ... }:
+{
+  username,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -11,6 +15,7 @@
     ../../modules/flatpak.nix
     ../../modules/git.nix
     ../../modules/development.nix
+    ../../modules/noctalia.nix
   ];
 
   home.packages = with pkgs; [
