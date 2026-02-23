@@ -17,6 +17,7 @@
     thunar
     thunar-volman
     thunar-archive-plugin
+    
     libnotify
     gammastep
     xdg-utils
@@ -44,4 +45,7 @@
     })
   ];
   programs.java.enable = true;
+# Thunar stuff
+  services.tumbler.enable = true;
+  services.gvfs.enable = true;
 }

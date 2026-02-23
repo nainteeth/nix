@@ -606,7 +606,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/nainteeth/Bilder/Wallpaper",
+        "directory": "/home/nainteeth/Bilder/Hintergrundbilder",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
