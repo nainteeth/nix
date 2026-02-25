@@ -14,10 +14,8 @@
     jq
     libreoffice
     flatpak
-    thunar
-    thunar-volman
-    thunar-archive-plugin
-    
+    librsvg
+    papirus-icon-theme
     libnotify
     gammastep
     xdg-utils
@@ -44,8 +42,21 @@
       '';
     })
   ];
-  programs.java.enable = true;
-# Thunar stuff
+  programs = {
+    java.enable = true;
+    dconf.enable = true;
+    # Thunar stuff
+    thunar = {
+      enable = true;
+      plugins = with pkgs; [
+        thunar-archive-plugin
+        thunar-volman
+      ];
+    };
+    xfconf = {
+      enable = true;
+    };
+  };
   services.tumbler.enable = true;
   services.gvfs.enable = true;
 }
