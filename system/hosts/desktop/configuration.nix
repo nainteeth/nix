@@ -1,4 +1,9 @@
-{ config, pkgs, username, ... }:
+{
+  config,
+  pkgs,
+  username,
+  ...
+}:
 
 {
   imports = [
@@ -21,7 +26,7 @@
     enable32Bit = true;
   };
 
-programs.steam = {
+  programs.steam = {
     enable = true;
     package = pkgs.steam.override {
       extraProfile = ''
@@ -42,17 +47,17 @@ programs.steam = {
 
   # Razer mouse
   hardware.openrazer.enable = true;
-  hardware.openrazer.users =  ["nainteeth"];
+  hardware.openrazer.users = [ "nainteeth" ];
   services.input-remapper.enable = true;
 
   # OSU! starter pack
   hardware.opentabletdriver.enable = true;
   hardware.wooting.enable = true;
   services.udev.extraRules = ''
-  SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", MODE="0666", GROUP="input"
-  SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", MODE="0666", GROUP="input"
-  SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", MODE="0666", GROUP="input"
-  SUBSYSTEM=="usb", ATTRS{idVendor}=="3434", MODE="0666", GROUP="input"
+    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", MODE="0666", GROUP="input"
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", MODE="0666", GROUP="input"
+    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", MODE="0666", GROUP="input"
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="3434", MODE="0666", GROUP="input"
   '';
 
   networking.networkmanager.enable = true;
@@ -60,7 +65,10 @@ programs.steam = {
   # Trying to play hypixel skyblock in eu
   services.cloudflare-warp.enable = true;
   networking = {
-    nameservers = [ "1.1.1.1" "8.8.8.8" ];
+    nameservers = [
+      "1.1.1.1"
+      "8.8.8.8"
+    ];
   };
   services.mullvad-vpn.enable = true;
 
@@ -71,7 +79,7 @@ programs.steam = {
   # This is needed for UxPlay to work
   services.avahi = {
     enable = true;
-    nssmdns4 = true;  # Enable mDNS resolution for NSS
+    nssmdns4 = true; # Enable mDNS resolution for NSS
     openFirewall = true;
     publish = {
       enable = true;
@@ -84,8 +92,17 @@ programs.steam = {
   };
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 7000 7001 7100 ];
-    allowedUDPPorts = [ 5353 6000 6001 7011 ];
+    allowedTCPPorts = [
+      7000
+      7001
+      7100
+    ];
+    allowedUDPPorts = [
+      5353
+      6000
+      6001
+      7011
+    ];
   };
 
   time.timeZone = "Europe/Berlin";
@@ -116,7 +133,7 @@ programs.steam = {
       "audio"
       "plugdev"
     ];
-  shell = pkgs.bash;
+    shell = pkgs.bash;
   };
 
   services.flatpak.enable = true;
@@ -124,21 +141,24 @@ programs.steam = {
   programs.ssh.startAgent = true;
 
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
-      description = "polkit-gnome-authentication-agent-1";
-      wantedBy = [ "graphical-session.target" ];
-      wants = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
-      serviceConfig = {
-	Type = "simple";
-	ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-	Restart = "on-failure";
-	RestartSec = 1;
-	TimeoutStopSec = 10;
-      };
+    description = "polkit-gnome-authentication-agent-1";
+    wantedBy = [ "graphical-session.target" ];
+    wants = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
     };
+  };
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     warn-dirty = false;
   };
 

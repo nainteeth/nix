@@ -1,41 +1,40 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-  stylix = {
+  home.packages = with pkgs; [
+    adwaita-icon-theme
+    gnome-themes-extra
+  ];
+
+  gtk = {
     enable = true;
-    autoEnable = true;
-    polarity = "dark";
-    image = ~/Bilder/Wallpaper/monochrome-mountains.jpg;
-
-    cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
+    theme.name = "Adwaita";
+    iconTheme.name = "Adwaita";
+    cursorTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
       size = 24;
-    };
-
-    iconTheme = {
-      enable = true;
-      package = pkgs.papirus-icon-theme;
-      dark = "Papirus-Dark";
-      light = "Papirus-Light";
-    };
-
-    targets = {
-      firefox = {
-        enable = true;
-        profileNames = [
-          "default"
-        ];
-      };
-      wofi.enable = true;
     };
   };
 
-  wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      "gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'"
-      "gsettings set org.gnome.desktop.interface cursor-size 24"
-      "xfconf-query -c xsettings -p /Net/IconThemeName -s 'Papirus-Dark' --create -t string"
-    ];
+  xdg.configFile."gtk-3.0/settings.ini".text = ''
+    [Settings]
+    gtk-theme-name=Adwaita
+    gtk-icon-theme-name=Adwaita
+    gtk-cursor-theme-name=Adwaita
+    gtk-cursor-theme-size=24
+  '';
+
+  xdg.configFile."gtk-4.0/settings.ini".text = ''
+    [Settings]
+    gtk-theme-name=Adwaita
+    gtk-icon-theme-name=Adwaita
+    gtk-cursor-theme-name=Adwaita
+    gtk-cursor-theme-size=24
+  '';
+
+  home.sessionVariables = {
+    XCURSOR_THEME = "Adwaita";
+    XCURSOR_SIZE = "24";
   };
 }
