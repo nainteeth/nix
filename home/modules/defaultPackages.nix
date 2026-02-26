@@ -5,36 +5,32 @@
 
 {
   home.packages = with pkgs; [
-    # Window Manager
-    hyprpaper
+    # Basic WM stuff
+    # hyprpaper
     hypridle
     hyprlock
-    waybar
-    wofi
-    swww
-    swaynotificationcenter
+    # waybar
+    # wofi
+    # swww
+    # swaynotificationcenter
 
-    # Terminal & Shell
+    # Terminal stuff
     kitty
     starship
 
-    # Screenshots & Media
-    wl-clipboard
-    cliphist
+    # Media
     playerctl
     pamixer
     pavucontrol
     uxplay
+    vlc
+    mpv
 
     # Browsers
     firefox
     chromium
 
-    # Media
-    vlc
-    mpv
-
-    # Editors & IDEs
+    # Text Editor
     neovim
     jetbrains.idea
 
@@ -53,7 +49,6 @@
     # Development
     git
     gh
-    processing
 
     # CLI tools
     ripgrep
@@ -67,7 +62,7 @@
 
     # Other
     keepassxc
-    waypaper
+    # waypaper
     hyprpicker
     signal-desktop
 
