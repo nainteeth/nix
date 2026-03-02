@@ -32,5 +32,4 @@
   };
   fonts.fontconfig.enable = true;
   programs.home-manager.enable = true;
-
 }
