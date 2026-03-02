@@ -1,4 +1,8 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 
 {
   programs.emacs = {
@@ -6,12 +10,12 @@
     package = pkgs.emacs;
     extraPackages =
       epkgs: with epkgs; [
-        doom
-        vterm
-        pdf-tools
-        org-roam
+        #doom
+        #vterm
+        #pdf-tools
+        #org-roam
         #treesit-grammars.with-all-grammars
-        mu4e
+        #mu4e
       ];
   };
 
@@ -20,5 +24,9 @@
   home.sessionVariables = {
     DOOMDIR = "${config.home.homeDirectory}/.config/doom";
     DOOMLOCALDIR = "${config.home.homeDirectory}/.local/share/doom";
+  };
+  # Emacs 2x Scale
+  xresources.properties = {
+    "Xft.dpi" = 192;
   };
 }

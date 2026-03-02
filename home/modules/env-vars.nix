@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 
 {
   # Session variables for Wayland/Hyprland
