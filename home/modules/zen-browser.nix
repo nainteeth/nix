@@ -1,10 +1,12 @@
-{ pkgs, inputs, ... }:
-
+{
+  pkgs,
+  inputs,
+  ...
+}:
 {
   imports = [
     inputs.zen-browser.homeModules.default
   ];
-
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
@@ -15,18 +17,14 @@
       "x-scheme-handler/unknown" = "zen-beta.desktop";
     };
   };
-
   programs.zen-browser = {
     enable = true;
     package = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
-
     suppressXdgMigrationWarning = true;
-
     profiles.default = {
       id = 0;
       name = "default";
       isDefault = true;
-
       settings = {
         "zen.urlbar.replace-newtab" = false;
         "browser.startup.homepage" = "about:home";
@@ -44,7 +42,6 @@
         "toolkit.telemetry.unified" = false;
         "toolkit.telemetry.server" = "";
       };
-
       search = {
         force = true;
         default = "ddg";

@@ -1,5 +1,8 @@
-{ config, username, ... }:
-
+{
+  config,
+  username,
+  ...
+}:
 let
   mkOutOfStoreSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
 
@@ -13,7 +16,7 @@ in
     ".config/hypr".source = mkOutOfStoreSymlink "${configDir}/hypr";
 
     # Waybar
-    # ".config/waybar".source = mkOutOfStoreSymlink "${configDir}/waybar";
+    ".config/waybar".source = mkOutOfStoreSymlink "${configDir}/waybar";
 
     # Terminal
     ".config/kitty".source = mkOutOfStoreSymlink "${configDir}/kitty";
@@ -22,7 +25,7 @@ in
     ".config/nvim".source = mkOutOfStoreSymlink "${configDir}/nvim";
 
     # Launcher
-    # ".config/wofi".source = mkOutOfStoreSymlink "${configDir}/wofi";
+    ".config/wofi".source = mkOutOfStoreSymlink "${configDir}/wofi";
 
     # Emacs
     ".config/doom".source = mkOutOfStoreSymlink "${configDir}/doom";

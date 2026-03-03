@@ -1,5 +1,6 @@
-{ ... }:
-
+{
+  ...
+}:
 {
   # Starship prompt
   programs = {

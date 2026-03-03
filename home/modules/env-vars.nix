@@ -1,5 +1,6 @@
-{ ... }:
-
+{
+  ...
+}:
 {
   # Session variables for Wayland/Hyprland
   home.sessionVariables = {
@@ -16,8 +17,8 @@
     XDG_SESSION_DESKTOP = "Hyprland";
 
     # Editor
-    EDITOR = "emacs";
-    VISUAL = "emacs";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
   };
 
 }

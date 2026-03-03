@@ -1,11 +1,10 @@
 {
   pkgs,
-  username,
   ...
 }:
-
 {
   imports = [
+    ../../modules/defaultHome.nix
     ../../modules/dotfiles.nix
     ../../modules/defaultPackages.nix
     ../../modules/env-vars.nix
@@ -17,8 +16,6 @@
     ../../modules/development.nix
     ../../modules/noctalia.nix
   ];
-
-  # Desktop-specific stuff
   home = {
     packages = with pkgs; [
       lutris
@@ -26,10 +23,5 @@
       mangohud
       prismlauncher
     ];
-    username = username;
-    homeDirectory = "/home/${username}";
-    stateVersion = "25.05";
   };
-  fonts.fontconfig.enable = true;
-  programs.home-manager.enable = true;
 }

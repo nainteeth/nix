@@ -1,11 +1,10 @@
 {
-  username,
   pkgs,
   ...
 }:
-
 {
   imports = [
+    ../../modules/defaultHome.nix
     ../../modules/dotfiles.nix
     ../../modules/defaultPackages.nix
     ../../modules/env-vars.nix
@@ -17,22 +16,11 @@
     ../../modules/development.nix
     ../../modules/noctalia.nix
   ];
-
-  home.packages = with pkgs; [
-    brightnessctl
-    acpi
-    powertop
-  ];
-
-  home.sessionVariables = {
-    # Could be useful in the future
+  home = {
+    packages = with pkgs; [
+      brightnessctl
+      acpi
+      powertop
+    ];
   };
-
-  home.username = username;
-  home.homeDirectory = "/home/${username}";
-  home.stateVersion = "25.05";
-
-  fonts.fontconfig.enable = true;
-
-  programs.home-manager.enable = true;
 }
