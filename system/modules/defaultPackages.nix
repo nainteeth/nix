@@ -2,7 +2,6 @@
   pkgs,
   ...
 }:
-
 {
   environment.systemPackages = with pkgs; [
     vim
@@ -57,6 +56,8 @@
       enable = true;
     };
   };
-  services.tumbler.enable = true;
-  services.gvfs.enable = true;
+  services = {
+    tumbler.enable = true;
+    gvfs.enable = true;
+  };
 }
