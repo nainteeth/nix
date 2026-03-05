@@ -15,6 +15,7 @@
     ../../modules/git.nix
     ../../modules/development.nix
     ../../modules/noctalia.nix
+    ../../modules/neovim.nix
   ];
   home = {
     packages = with pkgs; [

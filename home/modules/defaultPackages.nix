@@ -30,7 +30,6 @@
     chromium
 
     # Text Editor
-    neovim
     jetbrains.idea
 
     # System utilities

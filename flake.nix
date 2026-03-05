@@ -45,7 +45,6 @@
               noctalia
               ;
           };
-
           modules = [
             ./system/hosts/${hostname}/configuration.nix
             { nixpkgs.hostPlatform = "x86_64-linux"; }
@@ -69,10 +68,21 @@
                     ;
                 };
               };
-
               networking.hostName = hostname;
             }
           ];
+        };
+
+      mkHome = hostname: home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = {
+            inherit
+              inputs
+              hostname
+              username
+              ;
+          };
+          modules = [ ./home/hosts/${hostname}/${hostname}.nix ];
         };
     in
     {
@@ -80,5 +90,9 @@
         laptop = mkSystem "laptop";
         desktop = mkSystem "desktop";
       };
+
+      homeConfigurations = {
+          home = mkHome "home";
+        };
     };
 }
