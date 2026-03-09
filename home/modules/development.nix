@@ -5,8 +5,6 @@
 {
   home.packages = with pkgs; [
     # Language runtimes
-    lua
-    luarocks
     go
     cargo
     ruby

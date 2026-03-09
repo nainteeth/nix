@@ -7,7 +7,6 @@
     starship = {
       enable = true;
       enableBashIntegration = true;
-      # Config is in dotfiles/starship/starship.toml (via mkOutOfStoreSymlink)
     };
     bash = {
       enable = true;
