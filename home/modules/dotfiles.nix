@@ -21,9 +21,6 @@ in
     # Terminal
     ".config/kitty".source = mkOutOfStoreSymlink "${configDir}/kitty";
 
-    # Vim
-    ".config/nvim".source = mkOutOfStoreSymlink "${configDir}/nvim";
-
     # Launcher
     ".config/wofi".source = mkOutOfStoreSymlink "${configDir}/wofi";
 

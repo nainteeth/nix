@@ -4,8 +4,7 @@
 }:
 {
   home.packages = with pkgs; [
-    lua
-    luarocks
+    # Language runtimes
     go
     cargo
     ruby
@@ -14,15 +13,17 @@
     jdk
     julia
     python3
-    tree-sitter
-    clang
-    lazygit
-    glib
-    ghostscript # gs command for neovim (snacks.nvim)
-    nodePackages.mermaid-cli # (snacks.nvim)
-    sqlite
     python3Packages.pip
+
+    # Compilers / build tools
+    clang
+
+    # Formatters & linters
     nixfmt
     nodePackages.prettier
+
+    # Libraries
+    glib
+    sqlite
   ];
 }

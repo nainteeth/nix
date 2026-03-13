@@ -1,6 +1,6 @@
 # NixOS Configuration
 
-This repository contains my NixOS configuration using Hyprland, `mkOutOfStoreSymlinks`, and Doom Emacs.
+This repository contains my NixOS configuration.
 
 ## Setup Instructions
 
@@ -18,6 +18,44 @@ This repository contains my NixOS configuration using Hyprland, `mkOutOfStoreSym
 3. Reboot the system:
     ```bash
     systemctl reboot
+    ```
+
+## Standalone Home Manager (non-NixOS)
+
+This repo also supports standalone Home Manager for use on any non-NixOS Linux system (e.g. Debian, Ubuntu, Arch). The home configuration is shared with the NixOS hosts — only system-level and Hyprland-specific modules are excluded.
+
+### First-time setup
+
+1. Install the Nix package manager:
+    ```bash
+    sh <(curl -L https://nixos.org/nix/install) --daemon
+    ```
+
+2. Restart your shell or source the Nix profile:
+    ```bash
+    . /etc/profile.d/nix.sh
+    ```
+
+3. Enable flakes (if not already enabled):
+    ```bash
+    mkdir -p ~/.config/nix
+    echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+    ```
+
+4. Install Home Manager:
+    ```bash
+    nix profile install nixpkgs#home-manager
+    ```
+
+5. Clone the repository:
+    ```bash
+    git clone https://github.com/nainteeth/nix
+    cd nix
+    ```
+
+6. Apply the home configuration:
+    ```bash
+    home-manager switch --flake .#home
     ```
 
 ## Configure GitHub SSH Access
@@ -67,4 +105,4 @@ If you want to use environment variables to scale Steam, you will have to follow
 
 ## Spotify Scaling
 
-Open Spotify and scale it with ctrl - or ctrl +. 
+Open Spotify and scale it with ctrl - or ctrl +.
