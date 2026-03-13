@@ -12,7 +12,6 @@
     };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    hyprland.url = "github:hyprwm/Hyprland"; # stability is overrated
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +25,6 @@
       home-manager,
       zen-browser,
       nix-flatpak,
-      hyprland,
       noctalia,
       ...
     }@inputs:
@@ -41,7 +39,6 @@
               inputs
               username
               nix-flatpak
-              hyprland
               noctalia
               ;
           };
@@ -64,7 +61,6 @@
                     username
                     zen-browser
                     nix-flatpak
-                    hyprland
                     noctalia
                     ;
                 };

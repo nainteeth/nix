@@ -20,7 +20,6 @@
   programs.zen-browser = {
     enable = true;
     package = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
-    suppressXdgMigrationWarning = true;
     profiles.default = {
       id = 0;
       name = "default";
