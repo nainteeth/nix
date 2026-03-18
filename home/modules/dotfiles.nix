@@ -15,6 +15,9 @@ in
     # Hyprland
     ".config/hypr".source = mkOutOfStoreSymlink "${configDir}/hypr";
 
+    # Wayfire
+    ".config/wayfire".source = mkOutOfStoreSymlink "${configDir}/hypr";
+
     # Waybar
     ".config/waybar".source = mkOutOfStoreSymlink "${configDir}/waybar";
 
