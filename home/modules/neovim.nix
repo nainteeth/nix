@@ -9,7 +9,7 @@ let
   repoDir = "/home/${username}/nix";
   configDir = "${repoDir}/home/dotfiles";
 in
-  {
+{
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -28,7 +28,7 @@ in
       statix
       ghostscript
       nodePackages.mermaid-cli
-      (python3.withPackages (ps: [ps.pip]))
+      (python3.withPackages (ps: [ ps.pip ]))
       # Lazyvim wants this version specifically:
       lua5_1
       lua51Packages.luarocks

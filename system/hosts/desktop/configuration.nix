@@ -9,6 +9,7 @@
     # ../../modules/doom.nix
     ../../modules/defaultPackages.nix
     ../../modules/hyprland.nix
+    ../../modules/wayfire.nix
   ];
 
   # Desktop specific packages
