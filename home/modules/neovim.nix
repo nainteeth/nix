@@ -12,7 +12,7 @@ in
 {
   programs.neovim = {
     enable = true;
-    defaultEditor = true;
+    defaultEditor = false;
   };
   home = {
     packages = with pkgs; [

@@ -1,0 +1,13 @@
+[[language]]
+name = "nix"
+formatter = { command = "nixfmt" }
+auto-format = true
+
+[[language]]
+name = "java"
+language-servers = ["jdtls"]
+
+[[language]]
+name = "latex"
+language-servers = ["texlab", "ltex-ls"]
+auto-format = false
