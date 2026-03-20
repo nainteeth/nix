@@ -26,6 +26,10 @@ in
       luasnip
       cmp_luasnip
 
+      mini-nvim
+
+      gitsigns-nvim
+
       # Fuzzy Finder
       telescope-nvim
       plenary-nvim
@@ -46,12 +50,16 @@ in
 
       # Theme
       catppuccin-nvim
+      rose-pine
 
       # Space menu
       which-key-nvim
 
       # Awesome navigation plugin
       flash-nvim
+
+      # git stuff
+      lazygit-nvim
     ];
   };
 
@@ -72,6 +80,8 @@ in
       # Telescope Dependencies
       ripgrep
       fd
+
+      lazygit
     ];
 
     file.".config/nvim".source = mkOutOfStoreSymlink "${configDir}/nvim";

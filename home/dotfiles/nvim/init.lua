@@ -12,7 +12,14 @@ vim.opt.clipboard = "unnamedplus"
 require("catppuccin").setup({
   flavour = "mocha",
 })
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("rose-pine")
+-- Transparenten Hintergrund in Neovim
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "none" })
+vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { bg = "none" })
 
 ---- Keybinds
 vim.g.mapleader = " "
@@ -78,13 +85,38 @@ require("which-key").setup({
 require("which-key").add({
   { "<leader>w", group = "windows" },
 })
+require("which-key").add({
+  { "gc", desc = "Comment", mode = { "n", "v" } },
+  { "gcc", desc = "Comment line" },
+})
 
 -- flash.nvim 
 require("flash").setup({})
 vim.keymap.set({"n", "x", "o"}, "s", function() require("flash").jump() end, { desc = "Flash seek" })
 vim.keymap.set({"n", "x", "o"}, "S", function() require("flash").treesitter() end, { desc = "Flash treesitter" })
 
--- AUTOCOMPLETE
+-- mini.nvim
+require("mini.pairs").setup()
+require("mini.comment").setup()
+
+-- lazygit
+vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { desc = "LazyGit" })
+require("which-key").add({
+  { "<leader>gg", desc = "LazyGit" },
+})
+
+-- gitsigns
+require("gitsigns").setup({
+  signs = {
+    add          = { text = "▎" },
+    change       = { text = "▎" },
+    delete       = { text = "" },
+    topdelete    = { text = "" },
+    changedelete = { text = "▎" },
+  },
+})
+
+-- autocomplete
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 cmp.setup({
