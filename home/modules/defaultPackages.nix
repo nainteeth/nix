@@ -16,6 +16,7 @@
     # Terminal stuff
     kitty
     starship
+    yazi
 
     # Media
     playerctl

@@ -16,7 +16,7 @@
     ../../modules/development.nix
     ../../modules/noctalia.nix
     ../../modules/neovim.nix
-    ../../modules/helix.nix
+    ../../modules/qutebrowser.nix
   ];
   home = {
     packages = with pkgs; [

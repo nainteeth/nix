@@ -12,30 +12,63 @@ in
 {
   programs.neovim = {
     enable = true;
-    defaultEditor = false;
+    defaultEditor = true;
+
+    plugins = with pkgs.vimPlugins; [
+      # LSP
+      nvim-lspconfig
+
+      # Autocomplete
+      nvim-cmp
+      cmp-nvim-lsp
+      cmp-buffer
+      cmp-path
+      luasnip
+      cmp_luasnip
+
+      # Fuzzy Finder
+      telescope-nvim
+      plenary-nvim
+
+      # Dateibaum
+      neo-tree-nvim
+      nvim-web-devicons
+      nui-nvim
+
+      # Syntax Highlighting
+      nvim-treesitter.withAllGrammars
+
+      # Formatter
+      conform-nvim
+
+      # AI - Ollama via codecompanion
+      codecompanion-nvim
+
+      # Theme
+      catppuccin-nvim
+
+      # Space menu
+      which-key-nvim
+    ];
   };
+
   home = {
     packages = with pkgs; [
-      ripgrep
-      fd
-      fzf
-      lazygit
-      gcc
-      nodejs
-      nil
-      cargo # needed to build nil with mason
-      nixfmt
-      statix
-      ghostscript
-      nodePackages.mermaid-cli
-      (python3.withPackages (ps: [ ps.pip ]))
-      # Lazyvim wants this version specifically:
-      lua5_1
-      lua51Packages.luarocks
-
-      tree-sitter
+      # Fonts
       nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
+
+      # Sprachserver
+      jdt-language-server # Java
+      nil # Nix
+      nixfmt # Nix Formatter
+      texlab # LaTeX
+      texlive.combined.scheme-full # LaTeX Pakete
+      vscode-langservers-extracted # JSON, HTML, CSS
+
+      # Telescope Dependencies
+      ripgrep
+      fd
     ];
 
     file.".config/nvim".source = mkOutOfStoreSymlink "${configDir}/nvim";

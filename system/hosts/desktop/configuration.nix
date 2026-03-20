@@ -10,6 +10,7 @@
     ../../modules/defaultPackages.nix
     ../../modules/hyprland.nix
     ../../modules/wayfire.nix
+    ../../modules/ai.nix
   ];
 
   # Desktop specific packages
