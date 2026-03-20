@@ -64,6 +64,9 @@ in
 
       # git stuff
       lazygit-nvim
+
+      # Das WICHTIGSTE Plugin überhaupt
+      cellular-automaton-nvim
     ];
   };
 

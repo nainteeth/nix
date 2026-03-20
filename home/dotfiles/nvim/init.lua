@@ -48,6 +48,12 @@ vim.keymap.set("n", "<leader>wl", "<C-w>l", { desc = "Window right" })
 vim.keymap.set("n", "<leader>wd", "<C-w>q", { desc = "Window close" })
 vim.keymap.set("n", "<leader>ws", "<C-w>s", { desc = "Window split horizontal" })
 vim.keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Window split vertical" })
+-- wichtigste Keybinds überhaupt
+require("which-key").add({
+  { "<leader>ca", group = "cellular automaton" },
+})
+vim.keymap.set("n", "<leader>ör", ":CellularAutomaton make_it_rain<CR>", { desc = "Make it rain" })
+vim.keymap.set("n", "<leader>ög", ":CellularAutomaton game_of_life<CR>", { desc = "Game of life" })
 
 ---- LSP
 -- Nix
@@ -160,6 +166,7 @@ require("conform").setup({
 
 -- NEO-TREE
 require("neo-tree").setup({
+  close_if_last_window = true,
   window = {
     width = 30,
     mappings = {
