@@ -7,6 +7,7 @@ vim.opt.expandtab = true
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = 0
+vim.opt.clipboard = "unnamedplus"
 
 require("catppuccin").setup({
   flavour = "mocha",
@@ -80,6 +81,8 @@ require("which-key").add({
 
 -- flash.nvim 
 require("flash").setup({})
+vim.keymap.set({"n", "x", "o"}, "s", function() require("flash").jump() end, { desc = "Flash seek" })
+vim.keymap.set({"n", "x", "o"}, "S", function() require("flash").treesitter() end, { desc = "Flash treesitter" })
 
 -- AUTOCOMPLETE
 local cmp = require("cmp")
