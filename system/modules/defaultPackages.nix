@@ -8,6 +8,7 @@
     networkmanager
     networkmanagerapplet
     wget
+    nvtopPackages.amd
     curl
     git
     jq
