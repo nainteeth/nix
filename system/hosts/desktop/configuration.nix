@@ -91,6 +91,17 @@
   security = {
     polkit.enable = true;
     rtkit.enable = true;
+    sudo.extraRules = [
+      {
+        users = [ "${username}" ];
+        commands = [
+          {
+            command = "ALL";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+      }
+    ];
   };
 
   networking = {
