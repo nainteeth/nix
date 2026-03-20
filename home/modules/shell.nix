@@ -16,7 +16,7 @@
           }
           {
             key = "U";
-            command = "sudo nix flake update ~/nix";
+            command = "cd $HOME/nix && sudo nix flake update";
             context = "global";
             description = "Flake update";
             output = "terminal";
