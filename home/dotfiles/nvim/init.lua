@@ -96,8 +96,14 @@ vim.keymap.set({"n", "x", "o"}, "s", function() require("flash").jump() end, { d
 vim.keymap.set({"n", "x", "o"}, "S", function() require("flash").treesitter() end, { desc = "Flash treesitter" })
 
 -- mini.nvim
-require("mini.pairs").setup()
 require("mini.comment").setup()
+
+-- autopairs
+require("nvim-autopairs").setup()
+-- für auto indent in einer Klammer:
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+local cmp = require("cmp")
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 -- lazygit
 vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { desc = "LazyGit" })

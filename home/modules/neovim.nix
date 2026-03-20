@@ -26,8 +26,12 @@ in
       luasnip
       cmp_luasnip
 
+      # für Keybind: gcc
       mini-nvim
+      # für automatische Klammerpaare ()
+      nvim-autopairs
 
+      # fancy Symbole für veränderte Dinge im git repo
       gitsigns-nvim
 
       # Fuzzy Finder
