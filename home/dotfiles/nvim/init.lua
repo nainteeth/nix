@@ -78,6 +78,9 @@ require("which-key").add({
   { "<leader>w", group = "windows" },
 })
 
+-- flash.nvim 
+require("flash").setup({})
+
 -- AUTOCOMPLETE
 local cmp = require("cmp")
 local luasnip = require("luasnip")

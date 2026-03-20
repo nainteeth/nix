@@ -49,6 +49,9 @@ in
 
       # Space menu
       which-key-nvim
+
+      # Awesome navigation plugin
+      flash-nvim
     ];
   };
 
