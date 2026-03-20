@@ -80,8 +80,6 @@ in
       # Telescope Dependencies
       ripgrep
       fd
-
-      lazygit
     ];
 
     file.".config/nvim".source = mkOutOfStoreSymlink "${configDir}/nvim";

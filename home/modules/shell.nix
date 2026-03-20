@@ -2,8 +2,28 @@
   ...
 }:
 {
-  # Starship prompt
   programs = {
+    lazygit = {
+      enable = true;
+      settings = {
+        customCommands = [
+          {
+            key = "R";
+            command = "sudo nixos-rebuild switch --flake ~/nix#$(hostname)";
+            context = "global";
+            description = "NixOS rebuild";
+            output = "terminal";
+          }
+          {
+            key = "U";
+            command = "sudo nix flake update ~/nix";
+            context = "global";
+            description = "Flake update";
+            output = "terminal";
+          }
+        ];
+      };
+    };
     starship = {
       enable = true;
       enableBashIntegration = true;
@@ -13,13 +33,14 @@
       initExtra = ''
         ssh-add -l &>/dev/null || ssh-add ~/.ssh/github 2>/dev/null
       '';
+      shellAliases = {
+        rebuild = "git -C ~/nix add . && sudo nixos-rebuild switch --flake ~/nix#$(hostname)";
+      };
     };
-
     # Terminal file manager
     yazi = {
       enable = false;
       enableBashIntegration = true;
     };
   };
-
 }
