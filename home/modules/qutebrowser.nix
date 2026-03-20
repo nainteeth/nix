@@ -9,14 +9,11 @@
     settings = {
       tabs = {
         # Tabs
-        show = "multiple";
+        show = "always";
         position = "left";
         width = "15%";
         title.format = "{index}: {audio}{current_title}";
         last_close = "close";
-
-        # Tab unloading
-        unload.exclude = [ ];
       };
 
       # Fonts
@@ -26,14 +23,12 @@
       # UI
       statusbar.show = "always";
       scrolling.smooth = true;
+
       content = {
         # Privacy
         cookies.accept = "no-3rdparty";
         geolocation = false;
         notifications.enabled = false;
-
-        # Performance
-        prefers_reduced_motion = true;
       };
     };
 
@@ -58,17 +53,5 @@
       DEFAULT = "https://www.google.com/search?q={}";
       "!nix" = "https://search.nixos.org/packages?query={}";
     };
-
-    extraConfig = ''
-      # Discard all background tabs after 30 minutes of inactivity
-      c.tabs.unload.exclude = []
-      import subprocess, os
-
-      # Dim the tab bar for unloaded tabs
-      c.colors.tabs.bar.bg = "#1a1a1a"
-
-      # Auto-discard tabs after 30 min (requires qutebrowser >= 3.x)
-      # c.tabs.unload.interval = 1800
-    '';
   };
 }
