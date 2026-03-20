@@ -96,6 +96,13 @@ require("which-key").add({
   { "gcc", desc = "Comment line" },
 })
 
+-- lualine statusleiste
+require("lualine").setup({
+  options = {
+    theme = "rose-pine",
+  },
+})
+
 -- flash.nvim 
 require("flash").setup({})
 vim.keymap.set({"n", "x", "o"}, "s", function() require("flash").jump() end, { desc = "Flash seek" })

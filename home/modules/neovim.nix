@@ -56,6 +56,9 @@ in
       catppuccin-nvim
       rose-pine
 
+      # fancy statusleiste
+      lualine-nvim
+
       # Space menu
       which-key-nvim
 
