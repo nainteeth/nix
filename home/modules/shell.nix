@@ -42,5 +42,21 @@
       enable = false;
       enableBashIntegration = true;
     };
+    # fuzzy find ctrl r (bash history)
+    fzf = {
+      enable = true;
+      enableBashIntegration = true;
+    };
+    # fancy ls
+    eza = {
+      enable = true;
+      enableBashIntegration = true;
+      git = true;
+      icons = "auto";
+      extraOptions = [
+        "--long"
+        "--header"
+      ];
+    };
   };
 }
