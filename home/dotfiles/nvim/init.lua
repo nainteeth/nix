@@ -120,7 +120,10 @@ local cmp = require("cmp")
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 -- lazygit
-vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { desc = "LazyGit" })
+vim.keymap.set("n", "<leader>gg", function()
+  local root = vim.fn.systemlist("git -C " .. vim.fn.expand("%:p:h") .. " rev-parse --show-toplevel")[1]
+  require("lazygit").lazygit(root)
+end, { desc = "LazyGit" })
 require("which-key").add({
   { "<leader>gg", desc = "LazyGit" },
 })
