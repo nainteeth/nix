@@ -12,13 +12,13 @@ Both `system/` and `home/` follow the same layout:
 
 ## Hosts
 
-    - `desktop`
+- `desktop`
 - `laptop` 
 - `standalone` 
 
-### First-time setup
+## First-time setup
 
-## NixOS
+### NixOS
 
 1. Clone the repository:
     ```bash
@@ -36,7 +36,7 @@ Both `system/` and `home/` follow the same layout:
     systemctl reboot
     ```
 
-## Standalone Home Manager (non-NixOS)
+### Standalone Home Manager (non-NixOS)
 
 1. Install the Nix package manager:
     ```bash
@@ -88,6 +88,7 @@ Both `system/` and `home/` follow the same layout:
     ```bash
     git remote set-url origin git@github.com:nainteeth/nix.git
     ```
+
 ## Steam Scaling
 
 If you want to use environment variables to scale Steam, you will have to follow these steps: Open Steam, go to Settings > Interface, and ensure "Scale text and icons to match monitor settings" is toggled OFF. If this is ON, Steam will ignore all environment variables.

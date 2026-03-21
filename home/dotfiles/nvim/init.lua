@@ -112,6 +112,9 @@ vim.keymap.set({"n", "x", "o"}, "S", function() require("flash").treesitter() en
 -- mini.nvim
 require("mini.comment").setup()
 
+-- Mardown previews
+require("render-markdown").setup()
+
 -- autopairs
 require("nvim-autopairs").setup()
 -- für auto indent in einer Klammer:

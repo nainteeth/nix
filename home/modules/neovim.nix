@@ -26,9 +26,10 @@ in
       luasnip
       cmp_luasnip
 
-      # für Keybind: gcc
+      # for Keybind: gcc
       mini-nvim
-      # für automatische Klammerpaare ()
+
+      # () [] {} `` ""
       nvim-autopairs
 
       # fancy Symbole für veränderte Dinge im git repo
@@ -38,7 +39,7 @@ in
       telescope-nvim
       plenary-nvim
 
-      # Dateibaum
+      # file tree
       neo-tree-nvim
       nvim-web-devicons
       nui-nvim
@@ -56,7 +57,7 @@ in
       catppuccin-nvim
       rose-pine
 
-      # fancy statusleiste
+      # fancy bar at the bottom
       lualine-nvim
 
       # Space menu
@@ -68,7 +69,10 @@ in
       # git stuff
       lazygit-nvim
 
-      # Das WICHTIGSTE Plugin überhaupt
+      # Previews
+      render-markdown-nvim
+
+      # LIFE
       cellular-automaton-nvim
     ];
   };
