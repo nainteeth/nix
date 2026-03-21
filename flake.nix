@@ -10,6 +10,10 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     noctalia = {
@@ -26,6 +30,7 @@
       zen-browser,
       nix-flatpak,
       noctalia,
+      firefox-addons,
       ...
     }@inputs:
     let
@@ -40,6 +45,7 @@
               username
               nix-flatpak
               noctalia
+              firefox-addons
               ;
           };
           modules = [
@@ -61,6 +67,7 @@
                     zen-browser
                     nix-flatpak
                     noctalia
+                    firefox-addons
                     ;
                 };
               };
@@ -69,7 +76,9 @@
           ];
         };
 
-      mkHome = hostname: home-manager.lib.homeManagerConfiguration {
+      mkHome =
+        hostname:
+        home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = {
             inherit
@@ -88,7 +97,7 @@
       };
 
       homeConfigurations = {
-          home = mkHome "home";
-        };
+        home = mkHome "home";
+      };
     };
 }
