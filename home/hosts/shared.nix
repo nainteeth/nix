@@ -10,7 +10,6 @@
 {
   imports = [
     ../modules/zen-browser.nix
-    ../modules/qutebrowser.nix
 
     ../modules/noctalia.nix
     # ../modules/waybar.nix
