@@ -10,6 +10,7 @@
 {
   imports = [
     ../modules/hyprland.nix
+    # ../modules/wayfire.nix
     ../modules/ly.nix
     # ../modules/sddm.nix  This does not exist yet.
   ];
