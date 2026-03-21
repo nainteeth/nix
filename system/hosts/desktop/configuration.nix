@@ -1,39 +1,38 @@
 {
   pkgs,
   username,
+  lib,
   ...
 }:
 {
   imports = [
     ./hardware-configuration.nix
-    # ../../modules/doom.nix
-    ../../modules/defaultPackages.nix
-    ../../modules/hyprland.nix
-    ../../modules/wayfire.nix
-    ../../modules/ai.nix
+    ../shared.nix
   ];
 
-  # Desktop specific packages
   environment.systemPackages = with pkgs; [
-    mullvad-vpn
-    polychromatic # Frontend für open razer
+    polychromatic
     input-remapper
     polkit_gnome
   ];
-  programs = {
-    steam = {
-      enable = true;
-      package = pkgs.steam.override {
-        extraProfile = ''
-          export GDK_SCALE=1
-          export GDK_DPI_SCALE=1
-          export QT_AUTO_SCREEN_SCALE_FACTOR=0
-          export QT_SCALE_FACTOR=1
-        '';
-        extraArgs = "-forcedesktopscaling 1.0 -no-force-device-scale-factor";
-      };
+
+  programs.steam = {
+    enable = true;
+    package = pkgs.steam.override {
+      extraProfile = ''
+        export GDK_SCALE=1
+        export GDK_DPI_SCALE=1
+        export QT_AUTO_SCREEN_SCALE_FACTOR=0
+        export QT_SCALE_FACTOR=1
+      '';
+      extraArgs = "-forcedesktopscaling 1.0 -no-force-device-scale-factor";
     };
-    ssh.startAgent = true;
+  };
+
+  services.ollama = {
+    enable = true;
+    # run this command to install the llm:
+    # ollama pull qwen2.5-coder:14b
   };
 
   hardware = {
@@ -41,34 +40,21 @@
       enable = true;
       enable32Bit = true;
     };
-    openrazer.enable = true;
-    openrazer.users = [ "nainteeth" ];
+    openrazer = {
+      enable = true;
+      users = [ username ];
+    };
     opentabletdriver.enable = true;
     wooting.enable = true;
-    bluetooth.enable = true;
-    bluetooth.powerOnBoot = true;
-    enableAllFirmware = true;
   };
 
   services = {
-    flatpak.enable = true;
-    dbus.enable = true;
     input-remapper.enable = true;
-    udev.extraRules = ''
-      SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", MODE="0666", GROUP="input"
-      SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", MODE="0666", GROUP="input"
-      SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", MODE="0666", GROUP="input"
-      SUBSYSTEM=="usb", ATTRS{idVendor}=="3434", MODE="0666", GROUP="input"
-    '';
     cloudflare-warp.enable = true;
     mullvad-vpn.enable = true;
-    displayManager.ly = {
-      enable = true;
-    };
-    # This is needed for UxPlay to work
     avahi = {
       enable = true;
-      nssmdns4 = true; # Enable mDNS resolution for NSS
+      nssmdns4 = true;
       openFirewall = true;
       publish = {
         enable = true;
@@ -79,21 +65,19 @@
         workstation = true;
       };
     };
-    pipewire = {
-      enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      jack.enable = true;
-    };
-    printing.enable = true;
+    udev.extraRules = ''
+      SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", MODE="0666", GROUP="input"
+      SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", MODE="0666", GROUP="input"
+      SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", MODE="0666", GROUP="input"
+      SUBSYSTEM=="usb", ATTRS{idVendor}=="3434", MODE="0666", GROUP="input"
+    '';
   };
 
   security = {
     polkit.enable = true;
-    rtkit.enable = true;
     sudo.extraRules = [
       {
-        users = [ "${username}" ];
+        users = [ username ];
         commands = [
           {
             command = "ALL";
@@ -105,7 +89,6 @@
   };
 
   networking = {
-    networkmanager.enable = true;
     nameservers = [
       "1.1.1.1"
       "8.8.8.8"
@@ -126,22 +109,9 @@
     };
   };
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  time.timeZone = "Europe/Berlin";
-  i18n.defaultLocale = "de_DE.UTF-8";
-
-  users.users.${username} = {
-    isNormalUser = true;
-    description = "nainteeth";
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-      "video"
-      "audio"
-      "plugdev"
-    ];
-    shell = pkgs.bash;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
   };
 
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
@@ -157,15 +127,4 @@
       TimeoutStopSec = 10;
     };
   };
-
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    warn-dirty = false;
-  };
-  nixpkgs.config.allowUnfree = true;
-  console.keyMap = "de";
-  system.stateVersion = "25.05";
 }

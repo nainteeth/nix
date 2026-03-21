@@ -2,7 +2,6 @@
   pkgs,
   ...
 }:
-
 {
   programs.wayfire = {
     enable = true;
