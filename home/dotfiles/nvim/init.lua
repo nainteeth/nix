@@ -10,9 +10,9 @@ vim.o.timeoutlen = 0
 vim.o.clipboard = "unnamedplus"
 vim.o.fillchars = "eob: "-- versteckt die hässlichen ~ bei leeren Zeilen
 
-require("catppuccin").setup({
-  flavour = "mocha",
-})
+-- require("catppuccin").setup({
+--   flavour = "mocha",
+-- })
 vim.cmd.colorscheme("rose-pine")
 -- Transparenten Hintergrund in Neovim
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
