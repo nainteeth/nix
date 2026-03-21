@@ -1,8 +1,24 @@
 # NixOS Configuration
 
-This repository contains my NixOS configuration.
+My NixOS configuration, managed with flakes and Home Manager.
 
-## Setup Instructions
+## Structure
+
+Both `system/` and `home/` follow the same layout:
+
+- `hosts/` — per-host configuration with one subfolder per machine
+- `shared.nix` — configuration shared across all hosts
+- `modules/` — swappable modules, comment/uncomment imports to enable or disable them
+
+## Hosts
+
+    - `desktop`
+- `laptop` 
+- `standalone` 
+
+### First-time setup
+
+## NixOS
 
 1. Clone the repository:
     ```bash
@@ -22,10 +38,6 @@ This repository contains my NixOS configuration.
 
 ## Standalone Home Manager (non-NixOS)
 
-This repo also supports standalone Home Manager for use on any non-NixOS Linux system (e.g. Debian, Ubuntu, Arch). The home configuration is shared with the NixOS hosts — only system-level and Hyprland-specific modules are excluded.
-
-### First-time setup
-
 1. Install the Nix package manager:
     ```bash
     sh <(curl -L https://nixos.org/nix/install) --daemon
@@ -36,7 +48,7 @@ This repo also supports standalone Home Manager for use on any non-NixOS Linux s
     . /etc/profile.d/nix.sh
     ```
 
-3. Enable flakes (if not already enabled):
+3. Enable flakes:
     ```bash
     mkdir -p ~/.config/nix
     echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
@@ -76,29 +88,6 @@ This repo also supports standalone Home Manager for use on any non-NixOS Linux s
     ```bash
     git remote set-url origin git@github.com:nainteeth/nix.git
     ```
-    
-## Installing Doom Emacs
-
-1. Remove any existing `.emacs.d` directory:
-    ```bash
-    rm -rf ~/.emacs.d
-    ```
-
-2. Clone the Doom Emacs repository:
-    ```bash
-    git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
-    ```
-
-3. Install Doom Emacs:
-    ```bash
-    ~/.emacs.d/bin/doom install
-    ```
-
-4. Rebuild Doom Emacs:
-    ```bash
-    doom sync
-    ```
-
 ## Steam Scaling
 
 If you want to use environment variables to scale Steam, you will have to follow these steps: Open Steam, go to Settings > Interface, and ensure "Scale text and icons to match monitor settings" is toggled OFF. If this is ON, Steam will ignore all environment variables.
