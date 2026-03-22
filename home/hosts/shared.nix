@@ -9,8 +9,7 @@
 }:
 {
   imports = [
-    ../modules/zen-browser.nix # This is only for youtube since their ads are invasive
-    ../modules/qutebrowser.nix
+    ../modules/zen-browser.nix
 
     ../modules/noctalia.nix
     # ../modules/waybar.nix
