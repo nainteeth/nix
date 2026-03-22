@@ -25,7 +25,8 @@
             "mullvad-vpn",
             "spotify",
             "com.bambulab.BambuStudio",
-            "zen-youtube"
+            "zen-youtube",
+            "org.qutebrowser.qutebrowser"
         ],
         "position": "center",
         "screenshotAnnotationTool": "",

@@ -9,7 +9,8 @@
 }:
 {
   imports = [
-    ../modules/zen-browser.nix
+    ../modules/zen-browser.nix # This is only for youtube since their ads are invasive
+    ../modules/qutebrowser.nix
 
     ../modules/noctalia.nix
     # ../modules/waybar.nix
@@ -72,6 +73,7 @@
 
       # Other
       keepassxc
+      gnupg
       signal-desktop
 
       # Fonts
