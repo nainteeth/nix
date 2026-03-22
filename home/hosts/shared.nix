@@ -48,7 +48,6 @@
       mpv
 
       # Browsers
-      firefox
       chromium
 
       # Text editor

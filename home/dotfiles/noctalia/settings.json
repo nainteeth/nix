@@ -24,7 +24,8 @@
             "org.keepassxc.KeePassXC",
             "mullvad-vpn",
             "spotify",
-            "com.bambulab.BambuStudio"
+            "com.bambulab.BambuStudio",
+            "zen-youtube"
         ],
         "position": "center",
         "screenshotAnnotationTool": "",
