@@ -1,3 +1,7 @@
+# browser.tabs.allow_transparent_browser und zen.widget.linux.transparency
+# müssen manuell in about:config auf true gesetzt werden.
+# Diese Settings werden von Zen beim Beenden überschrieben und lassen sich
+# nicht deklarativ erzwingen. Einmalig setzen, danach bleiben sie erhalten
 {
   pkgs,
   inputs,
@@ -35,7 +39,19 @@
         "browser.urlbar.suggest.quicksuggest.sponsored" = false;
         "browser.urlbar.suggest.quicksuggest.nonsponsored" = false;
         "browser.startup.homepage" = "about:home";
+
+        # Das funktioniert leider nicht
+        "browser.tabs.allow_transparent_browser" = true;
+        "zen.widget.linux.transparency" = true;
+
+        "zen.view.grey-out-inactive-windows" = false;
       };
+
+      # Zen Mods - UUIDs vom Zen Theme Store
+      mods = [
+        "642854b5-88b4-4c40-b256-e035532109df" # Zen Glass (transparent)
+      ];
+
       search = {
         force = true;
         default = "ddg";
