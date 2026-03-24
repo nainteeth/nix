@@ -19,12 +19,10 @@ in
       nvim-lspconfig
 
       # Autocomplete
-      nvim-cmp
-      cmp-nvim-lsp
-      cmp-buffer
-      cmp-path
-      luasnip
-      cmp_luasnip
+      nvim-cmp # popup menu
+      cmp-nvim-lsp # Vorschlaege vom lsp (zB. Variablennamen)
+      cmp-buffer # Vorschlaege basierend auf bereits geschriebenen Worten
+      cmp-path # Dateipfadvorschlaege
 
       # for Keybind: gcc
       mini-nvim

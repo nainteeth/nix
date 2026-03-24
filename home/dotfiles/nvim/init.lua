@@ -7,14 +7,11 @@ vim.o.expandtab = true
 vim.o.signcolumn = "yes"
 vim.o.termguicolors = true
 vim.o.timeoutlen = 0
-vim.o.clipboard = "unnamedplus"
-vim.o.fillchars = "eob: "-- versteckt die hässlichen ~ bei leeren Zeilen
+vim.o.clipboard = "unnamedplus" -- benutze systemclipboard bitte danke
+vim.o.fillchars = "eob: "-- versteckt die (sehr) hässlichen ~ bei leeren Zeilen
 
--- require("catppuccin").setup({
---   flavour = "mocha",
--- })
 vim.cmd.colorscheme("rose-pine")
--- Transparenten Hintergrund in Neovim
+-- Transparenten Hintergrund in Neovim (fancy!)
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
@@ -36,10 +33,10 @@ vim.keymap.set("n", "K", vim.lsp.buf.hover)
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "Rename symbol" })
 vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, { desc = "Code actions" })
 -- AI Chat
--- Normal Mode: Chat öffnen
--- Visual Mode: Selektion direkt an das Modell schicken
-vim.keymap.set("n", "<leader>c", ":CodeCompanionChat<CR>")
-vim.keymap.set("v", "<leader>c", ":CodeCompanion<CR>")
+-- Normal Mode ("n"): Chat öffnen
+vim.keymap.set("n", "<leader>c", ":AI<CR>")
+-- Visual Mode ("v"): Selektion direkt an das Modell schicken
+vim.keymap.set("v", "<leader>c", ":AI<CR>")
 
 -- window navigation
 vim.keymap.set("n", "<leader>wh", "<C-w>h", { desc = "Window left" })
@@ -49,10 +46,8 @@ vim.keymap.set("n", "<leader>wl", "<C-w>l", { desc = "Window right" })
 vim.keymap.set("n", "<leader>wd", "<C-w>q", { desc = "Window close" })
 vim.keymap.set("n", "<leader>ws", "<C-w>s", { desc = "Window split horizontal" })
 vim.keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Window split vertical" })
+
 -- wichtigste Keybinds überhaupt
-require("which-key").add({
-  { "<leader>ca", group = "cellular automaton" },
-})
 vim.keymap.set("n", "<leader>ör", ":CellularAutomaton make_it_rain<CR>", { desc = "Make it rain" })
 vim.keymap.set("n", "<leader>ög", ":CellularAutomaton game_of_life<CR>", { desc = "Game of life" })
 
@@ -90,14 +85,16 @@ require("which-key").setup({
   preset = "helix",
 })
 require("which-key").add({
-  { "<leader>w", group = "windows" },
+  { "<leader>w", group = "Windows" },
+  { "<leader>g", group = "Git" },
+  { "<leader>ö", group = "Das Leben" },
 })
 require("which-key").add({
   { "gc", desc = "Comment", mode = { "n", "v" } },
   { "gcc", desc = "Comment line" },
 })
 
--- lualine statusleiste
+-- lualine statusleiste (very fancy!)
 require("lualine").setup({
   options = {
     theme = "rose-pine",
@@ -132,23 +129,14 @@ require("which-key").add({
 })
 
 -- gitsigns
-require("gitsigns").setup({
-  signs = {
-    add          = { text = "▎" },
-    change       = { text = "▎" },
-    delete       = { text = "" },
-    topdelete    = { text = "" },
-    changedelete = { text = "▎" },
-  },
-})
+require("gitsigns").setup({})
 
 -- autocomplete
 local cmp = require("cmp")
-local luasnip = require("luasnip")
 cmp.setup({
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body)
+      vim.snippet.expand(args.body)
     end,
   },
   mapping = cmp.mapping.preset.insert({
@@ -159,7 +147,6 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
-    { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
   }),
@@ -195,28 +182,20 @@ require("neo-tree").setup({
   },
 })
 
-
--- Ollama läuft lokal als systemd Service auf Port 11434
+-- probably not going to use this but why not just have it
 require("codecompanion").setup({
   display = {
     chat = {
       window = {
         position = "right",
+        width = 0.33,
       },
     },
   },
-  adapters = {
-    ollama = require("codecompanion.adapters").extend("ollama", {
-      schema = {
-        model = {
-          default = "qwen2.5-coder:14b",
-        },
-      },
-      url = "http://127.0.0.1:11434",
-    }),
-  },
   strategies = {
-    chat   = { adapter = "ollama" },
-    inline = { adapter = "ollama" },
+    chat = {
+      adapter = "ollama",
+      schema = { model = "qwen2.5-coder:14b" },
+    },
   },
 })
