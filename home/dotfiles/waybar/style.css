@@ -1,20 +1,9 @@
-@define-color base      #191724;
-@define-color surface   #1f1d2e;
-@define-color overlay   #26233a;
-@define-color muted     #6e6a86;
-@define-color subtle    #908caa;
-@define-color text      #e0def4;
-@define-color love      #eb6f92;
-@define-color gold      #f6c177;
-@define-color pine      #31748f;
-@define-color foam      #9ccfd8;
-@define-color iris      #c4a7e7;
-@define-color highlight #403d52;
+@import "colors/current_theme.css";
 
 * {
   font-family: "JetBrainsMono Nerd Font";
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 900;
   min-height: 0;
   border: none;
   border-radius: 0;
@@ -24,11 +13,11 @@
 
 window#waybar {
   background: @base;
-  color: @text;
+  color: @overlay1;
 }
 
 #workspaces {
-  background: @highlight;
+  background: @accent;
   padding: 0 8px;
   margin: 4px 0 4px 4px;
   border-radius: 6px 0 0 6px;
@@ -36,56 +25,70 @@ window#waybar {
 
 #workspaces button {
   background: transparent;
-  color: @subtle;
+  color: @overlay1;
   padding: 0 8px;
   min-width: 28px;
   transition: all 0.15s ease;
 }
 
 #workspaces button:hover {
-  background: @overlay;
-  color: @text;
+  background: @overlay1;
+  color: @accent;
 }
 
 #workspaces button.active {
-  background: @overlay;
-  color: @iris;
+  background: @overlay1;
+  color: @accent;
   font-weight: bold;
 }
 
 #workspaces button.urgent {
-  background: @love;
+  background: @red;
   color: @base;
 }
 
 #custom-arrow-workspaces {
-  color: @highlight;
+  color: @accent;
   background: @base;
   font-size: 18px;
   margin: 4px 0;
 }
 
+#custom-arrow-clock-left {
+  color: @overlay1;
+  background: transparent;
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+#custom-arrow-clock-right {
+  color: @overlay1;
+  background: transparent;
+  font-size: 18px;
+  margin: 4px 0;
+}
+
 #clock {
-  background: @overlay;
-  color: @foam;
+  background: @overlay1;
+  color: @accent;
   padding: 0 16px;
   margin: 4px 0;
-  border-radius: 6px;
+  border-radius: 0;
   font-weight: bold;
 }
 
 #custom-arrow-tray {
-  color: @surface;
+  color: @overlay1;
   background: @base;
   font-size: 18px;
   margin: 4px 0;
 }
 
 #tray {
-  background: @surface;
+  background: @overlay1;
   padding: 0 10px;
   margin: 4px 0;
-  color: @subtle;
+  color: @overlay2;
 }
 
 #tray > .passive {
@@ -94,32 +97,25 @@ window#waybar {
 
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
-  background: @love;
+  background: @red;
 }
 
 #custom-arrow-audio {
-  color: @highlight;
-  background: @surface;
+  color: @accent;
+  background: @overlay;
   font-size: 18px;
   margin: 4px 0;
 }
 
 #pulseaudio {
-  background: @highlight;
-  color: @foam;
+  background: @accent;
+  color: @base;
   padding: 0 12px;
   margin: 4px 0;
 }
 
 #pulseaudio.muted {
-  color: @muted;
-}
-
-#custom-arrow-battery {
-  color: @overlay;
-  background: @highlight;
-  font-size: 18px;
-  margin: 4px 0;
+  color: @overlay2;
 }
 
 #battery {
@@ -131,7 +127,7 @@ window#waybar {
 }
 
 #battery.charging {
-  color: @pine;
+  color: @overlay3;
 }
 
 #battery.warning:not(.charging) {
@@ -139,5 +135,5 @@ window#waybar {
 }
 
 #battery.critical:not(.charging) {
-  color: @love;
+  color: @red;
 }
