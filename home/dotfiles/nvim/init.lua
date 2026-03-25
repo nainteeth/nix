@@ -10,7 +10,7 @@ vim.o.timeoutlen = 0
 vim.o.clipboard = "unnamedplus" -- benutze systemclipboard bitte danke
 vim.o.fillchars = "eob: "-- versteckt die (sehr) hässlichen ~ bei leeren Zeilen
 
-vim.cmd.colorscheme("rose-pine")
+
 -- Transparenten Hintergrund in Neovim (fancy!)
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -74,6 +74,22 @@ vim.lsp.config("texlab", {
 vim.lsp.config("jsonls", {})
 -- Alle Server aktivieren
 vim.lsp.enable({ "nil_ls", "jdtls", "texlab", "jsonls" })
+
+-- Themes:
+require("catppuccin").setup({
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    transparent_background = true,
+})
+require("rose-pine").setup({
+    variant = "main", -- main, moon, or dawn
+    dark_variant = "main",
+    dim_inactive_windows = false,
+    extend_background_behind_borders = true,
+})
+require("lackluster").setup({})
+
+-- Hier theme auswählen
+vim.cmd.colorscheme("everforest")
 
 -- whichkey
 require("which-key").setup({

@@ -51,6 +51,9 @@ in
       # Theme
       catppuccin-nvim
       rose-pine
+      gruvbox-nvim
+      everforest
+      lackluster-nvim
 
       # hexfarben
       nvim-colorizer-lua
