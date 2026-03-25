@@ -23,6 +23,7 @@
     wget
     nvtopPackages.amd
     curl
+    easyeffects
     git
     jq
     libreoffice

@@ -1,136 +1,91 @@
+@define-color base      #191724;
+@define-color surface   #1f1d2e;
+@define-color overlay   #26233a;
+@define-color muted     #6e6a86;
+@define-color subtle    #908caa;
+@define-color text      #e0def4;
+@define-color love      #eb6f92;
+@define-color gold      #f6c177;
+@define-color pine      #31748f;
+@define-color foam      #9ccfd8;
+@define-color iris      #c4a7e7;
+@define-color highlight #403d52;
+
 * {
-  font-size: 14px;
-  font-family: "JetbrainsMono Nerd Font";
-  font-weight: 400;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 13px;
+  font-weight: 500;
+  min-height: 0;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
 }
 
 window#waybar {
-  background: #1a1d21;
-  color: #e0dcd4;
-  transition-property: background-color;
-  transition-duration: 0.5s;
-  border-radius: 0px;
-  border: 1px solid #1a1d21; }
-
-button {
-  box-shadow: inset 0 -3px transparent;
-  border: none;
-  border-radius: 0;
+  background: @base;
+  color: @text;
 }
 
-button:hover {
-  background: #282c34;
-  box-shadow: inset 0 -3px #b4bcc4;}
-
 #workspaces {
-  background: transparent;
-  border-radius: 0;
-  margin: 5px 5px 5px 10px;
-  padding: 0 5px;
+  background: @highlight;
+  padding: 0 8px;
+  margin: 4px 0 4px 4px;
+  border-radius: 6px 0 0 6px;
 }
 
 #workspaces button {
-  padding: 0 5px;
-  background-color: transparent;
-  color: #e0dcd4;
-  min-width: 30px;
-  transition: all 0.2s ease;
+  background: transparent;
+  color: @subtle;
+  padding: 0 8px;
+  min-width: 28px;
+  transition: all 0.15s ease;
 }
 
 #workspaces button:hover {
-  background: #282c34;
-  color: #e0dcd4;
+  background: @overlay;
+  color: @text;
 }
 
 #workspaces button.active {
-  background: #282c34;
-  box-shadow: inset 0 -3px #ccc4b4;
-  color: #ccc4b4;
+  background: @overlay;
+  color: @iris;
   font-weight: bold;
 }
 
 #workspaces button.urgent {
-  background-color: #CDACAC;
-  color: #1a1d21;
+  background: @love;
+  color: @base;
 }
 
-.modules-right {
-  background: transparent;
-  border-radius: 0;
-  margin: 5px 10px 5px 5px;
-  padding: 0 5px;
+#custom-arrow-workspaces {
+  color: @highlight;
+  background: @base;
+  font-size: 18px;
+  margin: 4px 0;
 }
 
-#mode {
-  background-color: #3d424a;
-  border-bottom: 3px solid #b4bcc4;
-  padding: 0 10px;
+#clock {
+  background: @overlay;
+  color: @foam;
+  padding: 0 16px;
+  margin: 4px 0;
+  border-radius: 6px;
+  font-weight: bold;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#idle_inhibitor,
-#scratchpad,
-#mpd {
-  padding: 0 10px;
-  color: #e0dcd4;
-  background: transparent;
-  margin: 0;
-}
-
-.modules-right > widget:first-child > * {
-  border-left: none;
-}
-
-#clock:hover,
-#battery:hover,
-#network:hover,
-#pulseaudio:hover,
-#tray:hover,
-#cpu:hover,
-#memory:hover {
-  background: #282c34;
-  color: #e0dcd4;
-}
-
-#window,
-#workspaces {
-  margin: 0 4px;
-}
-
-#battery.charging {
-  color: #b4beb4;
-}
-
-#battery.warning:not(.charging) {
-  color: #CDACAC;
-}
-
-#battery.critical:not(.charging) {
-  color: #CDACAC;
-}
-
-#network.disconnected {
-  color: #CDACAC;
-}
-
-#temperature.critical {
-  color: #CDACAC;
+#custom-arrow-tray {
+  color: @surface;
+  background: @base;
+  font-size: 18px;
+  margin: 4px 0;
 }
 
 #tray {
-  background: transparent;
-  border-left: none;
+  background: @surface;
+  padding: 0 10px;
+  margin: 4px 0;
+  color: @subtle;
 }
 
 #tray > .passive {
@@ -139,33 +94,50 @@ button:hover {
 
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
-  background-color: #CDACAC;
+  background: @love;
 }
 
-#idle_inhibitor {
-  color: #c0bdb8;
+#custom-arrow-audio {
+  color: @highlight;
+  background: @surface;
+  font-size: 18px;
+  margin: 4px 0;
 }
 
-#idle_inhibitor.activated {
-  color: #ccc4b0;
-}
-
-#mpd {
-  color: #e0dcd4;
-}
-
-#mpd.disconnected {
-  color: #CDACAC;
-}
-
-#mpd.stopped {
-  color: #676d77;
-}
-
-#mpd.paused {
-  color: #b4bec8;
+#pulseaudio {
+  background: @highlight;
+  color: @foam;
+  padding: 0 12px;
+  margin: 4px 0;
 }
 
 #pulseaudio.muted {
-  color: #676d77;
+  color: @muted;
+}
+
+#custom-arrow-battery {
+  color: @overlay;
+  background: @highlight;
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+#battery {
+  background: @overlay;
+  color: @gold;
+  padding: 0 12px;
+  margin: 4px 4px 4px 0;
+  border-radius: 0 6px 6px 0;
+}
+
+#battery.charging {
+  color: @pine;
+}
+
+#battery.warning:not(.charging) {
+  color: @gold;
+}
+
+#battery.critical:not(.charging) {
+  color: @love;
 }

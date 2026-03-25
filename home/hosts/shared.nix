@@ -49,6 +49,8 @@
       vlc
       mpv
 
+      element-desktop
+
       # Browsers
       chromium
 
