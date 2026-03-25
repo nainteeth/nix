@@ -11,9 +11,11 @@
   imports = [
     ../modules/zen-browser.nix
 
-    ../modules/noctalia.nix
-    # ../modules/waybar.nix
-    # ../modules/wofi.nix
+    # ../modules/noctalia.nix
+    ../modules/waybar.nix
+    ../modules/wofi.nix
+    ../modules/mako.nix
+    ../modules/waypaper.nix
 
     ../modules/neovim.nix
     # ../modules/helix.nix
