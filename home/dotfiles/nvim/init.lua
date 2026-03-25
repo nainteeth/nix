@@ -32,11 +32,6 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "K", vim.lsp.buf.hover)
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "Rename symbol" })
 vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, { desc = "Code actions" })
--- AI Chat
--- Normal Mode ("n"): Chat öffnen
-vim.keymap.set("n", "<leader>c", ":AI<CR>")
--- Visual Mode ("v"): Selektion direkt an das Modell schicken
-vim.keymap.set("v", "<leader>c", ":AI<CR>")
 
 -- window navigation
 vim.keymap.set("n", "<leader>wh", "<C-w>h", { desc = "Window left" })
@@ -93,6 +88,9 @@ require("which-key").add({
   { "gc", desc = "Comment", mode = { "n", "v" } },
   { "gcc", desc = "Comment line" },
 })
+
+-- hexfarben
+require("colorizer").setup()
 
 -- lualine statusleiste (very fancy!)
 require("lualine").setup({
@@ -179,23 +177,5 @@ require("neo-tree").setup({
       enabled = true,
     },
     hide_dotfiles = false,
-  },
-})
-
--- probably not going to use this but why not just have it
-require("codecompanion").setup({
-  display = {
-    chat = {
-      window = {
-        position = "right",
-        width = 0.33,
-      },
-    },
-  },
-  strategies = {
-    chat = {
-      adapter = "ollama",
-      schema = { model = "qwen2.5-coder:14b" },
-    },
   },
 })

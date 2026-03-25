@@ -48,12 +48,12 @@ in
       # Formatter
       conform-nvim
 
-      # AI - Ollama via codecompanion
-      codecompanion-nvim
-
       # Theme
       catppuccin-nvim
       rose-pine
+
+      # hexfarben
+      nvim-colorizer-lua
 
       # fancy bar at the bottom
       lualine-nvim
@@ -86,7 +86,7 @@ in
       nil # Nix
       nixfmt # Nix Formatter
       texlab # LaTeX
-      texlive.combined.scheme-full # LaTeX Pakete
+      texlive.combined.scheme-medium # LaTeX Pakete
       vscode-langservers-extracted # JSON, HTML, CSS
 
       # Telescope Dependencies
