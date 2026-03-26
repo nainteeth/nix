@@ -1,3 +1,7 @@
+-- Hier theme auswählen
+-- Mögliche Optionen sind: "everforest", "gruvbox", "lackluster" (monochrome), "rose-pine", "catppuccin"
+currentTheme = "everforest"
+
 vim.o.number = true
 vim.o.relativenumber = true 
 vim.o.scrolloff = 8
@@ -88,8 +92,14 @@ require("rose-pine").setup({
 })
 require("lackluster").setup({})
 
--- Hier theme auswählen
-vim.cmd.colorscheme("everforest")
+-- Theme
+vim.cmd.colorscheme(currentTheme)
+require("lualine").setup({
+  options = {
+    theme = currentTheme,
+  },
+})
+
 
 -- whichkey
 require("which-key").setup({
@@ -107,13 +117,6 @@ require("which-key").add({
 
 -- hexfarben
 require("colorizer").setup()
-
--- lualine statusleiste (very fancy!)
-require("lualine").setup({
-  options = {
-    theme = "rose-pine",
-  },
-})
 
 -- flash.nvim 
 require("flash").setup({})
