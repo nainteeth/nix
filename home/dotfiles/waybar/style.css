@@ -3,7 +3,7 @@
 * {
   font-family: "JetBrainsMono Nerd Font";
   font-size: 13px;
-  font-weight: 900;
+  font-weight: 600;
   min-height: 0;
   border: none;
   border-radius: 0;
@@ -12,91 +12,100 @@
 }
 
 window#waybar {
-  background: @base;
-  color: @overlay1;
+  background: transparent;
+  color: #d4d4d4;
 }
 
 #workspaces {
-  background: @accent;
-  padding: 0 8px;
-  margin: 6px 0 6px 4px;
-  border-radius: 6px 0 0 6px;
+  background: alpha(@base, 0.7);
+  border: 2px solid rgba(120, 120, 120, 0.82);
+  border-radius: 12px;
+  padding: 0 4px;
+  margin: 6px 4px 0 16px;
 }
 
 #workspaces button {
   background: transparent;
-  color: @overlay1;
-  padding: 0 8px;
-  min-width: 28px;
-  transition: all 0.15s ease;
+  color: #d4d4d4;
+  padding: 0 10px;
+  margin: 2px 0;
+  min-width: 24px;
+  border-radius: 0;
+  transition: all 0.2s ease;
+  font-size: 18px;
+  border-right: 1px solid rgba(120, 120, 120, 0.6);
+}
+
+#workspaces button:last-child {
+  border-right: none;
+}
+
+#workspaces button:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+#workspaces button:last-child {
+  border-radius: 0 8px 8px 0;
 }
 
 #workspaces button:hover {
-  background: @overlay1;
-  color: @accent;
+  background: alpha(@accent, 0.4);
 }
 
 #workspaces button.active {
-  background: @overlay1;
-  color: @accent;
-  font-weight: bold;
+  background: alpha(@accent, 0.6);
+  border: 1px solid alpha(@accent, 0.5);
 }
 
 #workspaces button.urgent {
-  background: @red;
-  color: @base;
+  background: alpha(@red, 0.5);
+  border: 1px solid alpha(@red, 0.4);
 }
 
 #custom-hyprpicker {
-  font-size: 20px;
-  color: @base;
-  background: @accent;
-  padding: 0 10px;
-  margin: 6px 0 6px 0px;
-}
-
-#custom-arrow-workspaces {
-  color: @accent;
-  background: @base;
   font-size: 18px;
-  margin: 0px 0;
+  color: #d4d4d4;
+  background: alpha(@base, 0.7);
+  border: 2px solid rgba(120, 120, 120, 0.82);
+  border-radius: 12px;
+  padding: 0 12px;
+  margin: 6px 16px 0 4px;
 }
 
-#custom-arrow-clock-left {
-  color: @overlay1;
+#custom-hyprpicker:hover {
+  background: alpha(@accent, 0.4);
+}
+
+#custom-arrow-workspaces,
+#custom-arrow-clock-left,
+#custom-arrow-clock-right,
+#custom-arrow-tray,
+#custom-arrow-audio {
   background: transparent;
-  font-size: 18px;
-  margin: 4px 0;
-}
-
-#custom-arrow-clock-right {
-  color: @overlay1;
-  background: transparent;
-  font-size: 18px;
-  margin: 4px 0;
+  color: transparent;
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
 }
 
 #clock {
-  background: @overlay1;
-  color: @accent;
+  background: alpha(@base, 0.7);
+  border: 2px solid rgba(120, 120, 120, 0.82);
+  color: #d4d4d4;
   padding: 0 16px;
-  margin: 4px 0;
-  border-radius: 0;
+  margin: 6px 4px 0 4px;
+  border-radius: 12px;
   font-weight: bold;
 }
 
-#custom-arrow-tray {
-  color: @overlay1;
-  background: @base;
-  font-size: 18px;
-  margin: 0px 0;
-}
-
 #tray {
-  background: @overlay1;
-  padding: 0 10px;
-  margin: 4px 0;
-  color: @overlay2;
+  background: alpha(@base, 0.7);
+  border: 2px solid rgba(120, 120, 120, 0.82);
+  border-radius: 12px;
+  padding: 0 12px;
+  margin: 6px 4px 0 4px;
+  color: #d4d4d4;
 }
 
 #tray > .passive {
@@ -105,21 +114,23 @@ window#waybar {
 
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
-  background: @red;
-}
-
-#custom-arrow-audio {
-  color: @accent;
-  background: @overlay;
-  font-size: 18px;
-  margin: 4px 0;
+  background: alpha(@red, 0.5);
+  border-radius: 8px;
 }
 
 #pulseaudio {
-  background: @accent;
-  color: @base;
-  padding: 0 12px;
-  margin: 6px 0 6px 0px;
+  background: alpha(@base, 0.7);
+  border: 2px solid rgba(120, 120, 120, 0.82);
+  color: #d4d4d4;
+  padding: 0 14px;
+  margin: 6px 4px 0 4px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+#pulseaudio:hover {
+  background: alpha(@accent, 0.4);
+  border-color: @accent;
 }
 
 #pulseaudio.muted {
@@ -127,21 +138,25 @@ window#waybar {
 }
 
 #battery {
-  background: @overlay;
-  color: @gold;
-  padding: 0 12px;
-  margin: 4px 4px 4px 0;
-  border-radius: 0 6px 6px 0;
+  background: alpha(@base, 0.7);
+  border: 2px solid rgba(120, 120, 120, 0.82);
+  color: #d4d4d4;
+  padding: 0 14px;
+  margin: 6px 4px 0 4px;
+  border-radius: 12px;
 }
 
 #battery.charging {
+  border-color: @overlay3;
   color: @overlay3;
 }
 
 #battery.warning:not(.charging) {
-  color: @gold;
+  border-color: @gold;
 }
 
 #battery.critical:not(.charging) {
+  background: alpha(@red, 0.3);
+  border-color: @red;
   color: @red;
 }

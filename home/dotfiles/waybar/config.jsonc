@@ -46,7 +46,44 @@
   },
   "hyprland/workspaces": {
     "disable-scroll": true,
-    "format": "{icon}",
+    "format": "{icon} {windows}",
+    "format-window-separator": " ",
+    "window-rewrite-default": "󰏗",
+    "window-rewrite": {
+      "class<firefox>": "󰈹",
+      "class<zen-beta>": "󰈹",
+      "class<zen>": "󰈹",
+      "class<chromium>": "󰊯",
+      "class<google-chrome>": "󰊯",
+      "class<brave-browser>": "󰖟",
+      "class<kitty>": "",
+      "class<Alacritty>": "",
+      "class<foot>": "",
+      "class<code>": "󰨞",
+      "class<Code>": "󰨞",
+      "class<codium>": "󰨞",
+      "class<com.discordapp.Discord>": "󰙯",
+      "class<vesktop>": "󰙯",
+      "class<discord>": "󰙯",
+      "class<Spotify>": "󰓇",
+      "class<spotify>": "󰓇",
+      "class<Steam>": "󰓓",
+      "class<steam>": "󰓓",
+      "class<thunar>": "󰉋",
+      "class<nautilus>": "󰉋",
+      "class<dolphin>": "󰉋",
+      "class<obsidian>": "󰎚",
+      "class<Slack>": "󰒱",
+      "class<signal>": "󰭹",
+      "class<telegram>": "󰔁",
+      "class<mpv>": "󰕼",
+      "class<vlc>": "󰕼",
+      "class<gimp>": "󰃣",
+      "class<blender>": "󰂫",
+      "class<obs>": "󰑋",
+      "class<.*osu.*>": "󰺢",
+      "class<org.keepassxc.KeePassXC>": "󰌋"
+    },
     "persistent-workspaces": {
       "DP-1": [
         1,
@@ -99,7 +136,7 @@
   "clock": {
     "format": "{:%A, %d %B | %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%d-%m}"
+    "on-click": "xdg-open https://calendar.google.com && sleep 0.3 && hyprctl dispatch focuswindow class:zen-beta"
   },
   "battery": {
     "states": {
