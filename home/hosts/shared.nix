@@ -63,7 +63,10 @@
       # System utilities
       btop
       htop
-      fastfetch
+      # fastfetch
+      nitch # minimal, aesthetic fetch
+      onefetch # git repo fetch
+      cpufetch # CPU fetch
 
       # Archive tools
       unzip # .zip extraction
@@ -76,6 +79,19 @@
       bat
       wget
       curl
+
+      # r/unixporn eye candy
+      pipes # run with: pipes.sh
+      cmatrix # matrix rain
+      cbonsai # grow bonsai trees
+      lolcat # rainbow text
+      figlet # ASCII banners
+      toilet # colored ASCII art
+      asciiquarium # terminal aquarium
+      tty-clock # terminal clock
+      sl # steam locomotive (typo punishment)
+      cowsay # talking cow
+      fortune # random quotes
 
       # Other
       keepassxc
