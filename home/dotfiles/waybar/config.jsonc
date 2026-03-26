@@ -16,8 +16,14 @@
     "custom/arrow-tray",
     "tray",
     "custom/arrow-audio",
-    "pulseaudio"
+    "pulseaudio",
+    "custom/hyprpicker"
   ],
+  "custom/hyprpicker": {
+    "format": "󰈊",
+    "on-click": "~/nix/home/dotfiles/waybar/scripts/hyprpicker-with-notifi.sh",
+    "tooltip": false
+  },
   "custom/arrow-workspaces": {
     "format": "\ue0b0",
     "tooltip": false

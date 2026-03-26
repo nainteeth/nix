@@ -21,6 +21,7 @@ in
       hypridle
       hyprlock
       hyprpicker
+      wl-clipboard # This is needed to copy the hex color from hyprpicker to clipboard
     ];
     sessionVariables = {
       XDG_CURRENT_DESKTOP = "Hyprland";
