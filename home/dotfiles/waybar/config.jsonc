@@ -31,11 +31,11 @@
     "tooltip": false
   },
   "custom/arrow-clock-left": {
-    "format": "\ue0b6",
+    "format": "\ue0b2",
     "tooltip": false
   },
   "custom/arrow-clock-right": {
-    "format": "\ue0b4",
+    "format": "\ue0b0",
     "tooltip": false
   },
   "hyprland/workspaces": {
