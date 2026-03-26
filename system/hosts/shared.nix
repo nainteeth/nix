@@ -43,6 +43,7 @@
   ];
 
   programs = {
+    nix-ld.enable = true; # needed because microsoft is incapable of making working installer
     java.enable = true;
     dconf.enable = true;
     ssh.startAgent = true;
@@ -99,6 +100,16 @@
     ];
     warn-dirty = false;
   };
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-generations +20";
+  };
+
+  nix.optimise.automatic = true;
+
+  boot.loader.systemd-boot.configurationLimit = 10;
 
   nixpkgs.config.allowUnfree = true;
 

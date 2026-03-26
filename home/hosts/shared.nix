@@ -41,6 +41,9 @@
       starship
       yazi
 
+      gh
+      nodejs
+
       # Media
       playerctl
       pamixer

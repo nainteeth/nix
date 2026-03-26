@@ -101,7 +101,7 @@
       };
 
       homeConfigurations = {
-        home = mkHome "home";
+        standalone = mkHome "standalone";
       };
     };
 }
