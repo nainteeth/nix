@@ -25,6 +25,7 @@
     # ../modules/wayfire.nix
 
     ../modules/kitty.nix
+    ../modules/yazi.nix
 
     nix-flatpak.homeManagerModules.nix-flatpak
   ];
@@ -40,7 +41,6 @@
     packages = with pkgs; [
       # Terminal
       starship
-      yazi
 
       gh
       nodejs
@@ -169,11 +169,7 @@
         rebuild = "git -C ~/nix add . && sudo nixos-rebuild switch --flake ~/nix#$(hostname)";
       };
     };
-    # Terminal file manager
-    yazi = {
-      enable = false;
-      enableBashIntegration = true;
-    };
+
     # fuzzy find ctrl r (bash history)
     fzf = {
       enable = true;

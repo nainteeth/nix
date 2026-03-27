@@ -1,8 +1,8 @@
-@define-color base       #24273a;
-@define-color surface    #363a4f;
-@define-color muted      #8087a2;
-@define-color danger     #ed8796;
-@define-color warning    #eed49f;
-@define-color info       #8aadf4;
-@define-color highlight  #494d64;
-@define-color accent     #c6a0f6;
+@define-color base       #002b36;
+@define-color surface    #073642;
+@define-color muted      #586e75;
+@define-color danger     #dc322f;
+@define-color warning    #b58900;
+@define-color info       #268bd2;
+@define-color highlight  #073642;
+@define-color accent     #2aa198;
