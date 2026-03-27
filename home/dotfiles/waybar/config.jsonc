@@ -3,45 +3,20 @@
   "height": 30,
   "spacing": 0,
   "modules-left": [
-    "hyprland/workspaces",
-    "custom/arrow-workspaces"
+    "hyprland/workspaces"
   ],
   "modules-center": [
-    "custom/arrow-clock-left",
-    "clock",
-    "custom/arrow-clock-right"
+    "clock"
   ],
   "modules-right": [
     "battery",
-    "custom/arrow-tray",
     "tray",
-    "custom/arrow-audio",
     "pulseaudio",
     "custom/hyprpicker"
   ],
   "custom/hyprpicker": {
     "format": "󰈊",
     "on-click": "~/nix/home/dotfiles/waybar/scripts/hyprpicker-with-notifi.sh",
-    "tooltip": false
-  },
-  "custom/arrow-workspaces": {
-    "format": "\ue0b0",
-    "tooltip": false
-  },
-  "custom/arrow-tray": {
-    "format": "\ue0b2",
-    "tooltip": false
-  },
-  "custom/arrow-audio": {
-    "format": "\ue0b2",
-    "tooltip": false
-  },
-  "custom/arrow-clock-left": {
-    "format": "\ue0b2",
-    "tooltip": false
-  },
-  "custom/arrow-clock-right": {
-    "format": "\ue0b0",
     "tooltip": false
   },
   "hyprland/workspaces": {
