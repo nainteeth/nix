@@ -1,0 +1,15 @@
+evergreen:everforest
+catppuccin-mocha:catppuccin
+catppuccin-macchiato:catppuccin-macchiato
+gruvbox:gruvbox
+rose-pine:rose-pine
+monochrome:lackluster
+tokyo-night:tokyonight
+nord:nord
+dracula:dracula
+kanagawa:kanagawa
+onedark:onedark
+solarized-dark:nightfox
+oxocarbon:oxocarbon
+decay:nordfox
+material-ocean:terafox

@@ -1,6 +1,6 @@
 window {
   margin: 0px;
-  border: 2px solid rgba(120, 120, 120, 0.82);
+  border: 2px solid rgba(120, 120, 120, 0.25);
   border-radius: 12px;
   background-color: rgba(35, 35, 35, 0.85);
 }
@@ -8,7 +8,7 @@ window {
 #input {
   margin: 12px;
   padding: 8px 12px;
-  border: 1px solid rgba(120, 120, 120, 0.5);
+  border: 1px solid rgba(120, 120, 120, 0.25);
   border-radius: 8px;
   color: #d4d4d4;
   background-color: rgba(40, 40, 40, 0.6);

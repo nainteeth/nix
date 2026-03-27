@@ -1,9 +1,8 @@
-/* catppuccin mocha: */
 @define-color base       #1e1e2e;
-@define-color overlay1   #262639;
-@define-color overlay2   #7f849c;
-@define-color red        #eba0ac;
-@define-color gold       #f9e2af;
-@define-color overlay3   #74c7ec;
+@define-color surface    #262639;
+@define-color muted      #7f849c;
+@define-color danger     #eba0ac;
+@define-color warning    #f9e2af;
+@define-color info       #74c7ec;
 @define-color highlight  #313244;
-@define-color accent     #bfa2de;
+@define-color accent     #cba6f7;

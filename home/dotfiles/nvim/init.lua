@@ -1,6 +1,5 @@
--- Hier theme auswählen
--- Mögliche Optionen sind: "everforest", "gruvbox", "lackluster" (monochrome), "rose-pine", "catppuccin"
-currentTheme = "everforest"
+local theme_switcher = require("theme-switcher")
+local currentTheme = theme_switcher.get_theme()
 
 vim.o.number = true
 vim.o.relativenumber = true 
@@ -11,17 +10,8 @@ vim.o.expandtab = true
 vim.o.signcolumn = "yes"
 vim.o.termguicolors = true
 vim.o.timeoutlen = 0
-vim.o.clipboard = "unnamedplus" -- benutze systemclipboard bitte danke
-vim.o.fillchars = "eob: "-- versteckt die (sehr) hässlichen ~ bei leeren Zeilen
-
-
--- Transparenten Hintergrund in Neovim (fancy!)
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "none" })
-vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { bg = "none" })
+vim.o.clipboard = "unnamedplus"
+vim.o.fillchars = "eob: "
 
 ---- Keybinds
 vim.g.mapleader = " "
@@ -81,19 +71,29 @@ vim.lsp.enable({ "nil_ls", "jdtls", "texlab", "jsonls" })
 
 -- Themes:
 require("catppuccin").setup({
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    flavour = "mocha",
     transparent_background = true,
 })
 require("rose-pine").setup({
-    variant = "main", -- main, moon, or dawn
+    variant = "main",
     dark_variant = "main",
     dim_inactive_windows = false,
     extend_background_behind_borders = true,
 })
 require("lackluster").setup({})
+require("tokyonight").setup({ transparent = true })
+require("kanagawa").setup({ transparent = true })
+require("onedark").setup({ style = "dark", transparent = true })
 
--- Theme
 vim.cmd.colorscheme(currentTheme)
+
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "none" })
+vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { bg = "none" })
+
 require("lualine").setup({
   options = {
     theme = currentTheme,

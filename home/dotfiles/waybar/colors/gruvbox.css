@@ -1,9 +1,8 @@
-/* gruvbox dark: */
 @define-color base       #282828;
-@define-color overlay1   #3c3836;
-@define-color overlay2   #a89984;
-@define-color red        #cc241d;
-@define-color gold       #d79921;
-@define-color overlay3   #458588;
+@define-color surface    #3c3836;
+@define-color muted      #a89984;
+@define-color danger     #fb4934;
+@define-color warning    #fabd2f;
+@define-color info       #83a598;
 @define-color highlight  #504945;
-@define-color accent     #a17b8d;
+@define-color accent     #b8bb26;

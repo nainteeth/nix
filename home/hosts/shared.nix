@@ -16,6 +16,7 @@
     ../modules/wofi.nix
     ../modules/mako.nix
     ../modules/waypaper.nix
+    ../modules/themes.nix
 
     ../modules/neovim.nix
     # ../modules/helix.nix

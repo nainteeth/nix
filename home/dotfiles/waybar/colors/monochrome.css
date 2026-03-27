@@ -1,9 +1,8 @@
-/* monochrome: */
 @define-color base       #191919;
-@define-color overlay1   #242424;
-@define-color overlay2   #909090;
-@define-color red        #b0b0b0;
-@define-color gold       #e0e0e0;
-@define-color overlay3   #4a4a4a;
+@define-color surface    #242424;
+@define-color muted      #909090;
+@define-color danger     #b0b0b0;
+@define-color warning    #e0e0e0;
+@define-color info       #4a4a4a;
 @define-color highlight  #3d3d3d;
 @define-color accent     #8a8a8a;

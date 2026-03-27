@@ -54,6 +54,13 @@ in
       gruvbox-nvim
       everforest
       lackluster-nvim
+      tokyonight-nvim
+      nord-nvim
+      dracula-nvim
+      kanagawa-nvim
+      onedark-nvim
+      nightfox-nvim
+      oxocarbon-nvim
 
       # hexfarben
       nvim-colorizer-lua
