@@ -214,7 +214,7 @@
     packages = [
       "com.discordapp.Discord"
       "com.bambulab.BambuStudio"
-      "io.github.ryubing.Ryujinx"
+      # "io.github.ryubing.Ryujinx"
     ];
     overrides = {
       "com.discordapp.Discord" = {
@@ -238,6 +238,18 @@
           QT_SCALE_FACTOR = "1";
         };
       };
+      # "io.github.ryubing.Ryujinx" = {
+      #   Environment = {
+      #     SDL_VIDEODRIVER = "x11";
+      #   };
+      #   Context.devices = [
+      #     "all"
+      #     "input"
+      #   ];
+      #   Context.filesystems = [
+      #     "/dev/bus/usb"
+      #   ];
+      # };
     };
     remotes = [
       {

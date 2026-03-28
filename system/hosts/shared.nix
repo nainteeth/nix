@@ -62,6 +62,7 @@
     gvfs.enable = true;
     flatpak.enable = true;
     printing.enable = true;
+    udev.packages = [ pkgs.game-devices-udev-rules ];
     pipewire = {
       enable = true;
       alsa.support32Bit = true;
@@ -74,6 +75,7 @@
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
     enableAllFirmware = true;
+    uinput.enable = true; # controller
 
     graphics = {
       enable = true;
@@ -94,6 +96,8 @@
       "video"
       "audio"
       "plugdev"
+      "input"
+      "uinput"
     ];
     shell = pkgs.bash;
   };
