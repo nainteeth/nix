@@ -40,6 +40,10 @@ vim.keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Window split vertical" })
 vim.keymap.set("n", "<leader>ör", ":CellularAutomaton make_it_rain<CR>", { desc = "Make it rain" })
 vim.keymap.set("n", "<leader>ög", ":CellularAutomaton game_of_life<CR>", { desc = "Game of life" })
 
+-- auswahl beibehalten nach indent
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+
 ---- LSP
 -- Nix
 vim.lsp.config("nil_ls", {

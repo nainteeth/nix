@@ -214,6 +214,7 @@
     packages = [
       "com.discordapp.Discord"
       "com.bambulab.BambuStudio"
+      "io.github.ryubing.Ryujinx"
     ];
     overrides = {
       "com.discordapp.Discord" = {

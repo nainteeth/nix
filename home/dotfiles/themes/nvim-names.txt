@@ -1,5 +1,5 @@
 evergreen:everforest
-catppuccin-mocha:catppuccin
+catppuccin-mocha:catppuccin-mocha
 catppuccin-macchiato:catppuccin-macchiato
 gruvbox:gruvbox
 rose-pine:rose-pine

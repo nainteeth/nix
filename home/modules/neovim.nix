@@ -103,7 +103,6 @@ in
       ripgrep
       fd
     ];
-
     file.".config/nvim".source = mkOutOfStoreSymlink "${configDir}/nvim";
   };
 }

@@ -1,7 +1,3 @@
-# browser.tabs.allow_transparent_browser und zen.widget.linux.transparency
-# müssen manuell in about:config auf true gesetzt werden.
-# Diese Settings werden von Zen beim Beenden überschrieben und lassen sich
-# nicht deklarativ erzwingen. Einmalig setzen, danach bleiben sie erhalten
 {
   pkgs,
   inputs,
@@ -26,9 +22,9 @@
   programs.zen-browser = {
     enable = true;
     package = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.beta;
-    profiles."Default User" = {
+    profiles."Default Profile" = {
       id = 0;
-      name = "Default User";
+      name = "Default Profile";
       isDefault = true;
       settings = {
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
@@ -36,12 +32,14 @@
         "browser.urlbar.suggest.searches" = true;
         "browser.urlbar.suggest.quicksuggest.sponsored" = false;
         "browser.urlbar.suggest.quicksuggest.nonsponsored" = false;
-
-        # Das funktioniert leider nicht, daher bitte manuell aktivieren in about:config
+        "browser.urlbar.suggest.history" = false;
+        "browser.urlbar.suggest.bookmark" = false;
+        "browser.urlbar.suggest.openpage" = false;
+        "browser.urlbar.suggest.topsites" = false;
         "browser.tabs.allow_transparent_browser" = true;
         "zen.widget.linux.transparency" = true;
-
         "zen.view.grey-out-inactive-windows" = false;
+        "zen.window-sync.enabled" = true;
       };
 
       # Zen Mods - UUIDs vom Zen Theme Store
@@ -92,22 +90,28 @@
           position = 104;
           isEssential = true;
         };
+        "Google Calender" = {
+          id = "a7af8ced-acb9-4116-a7b7-7eaed2611e25";
+          url = "https://calendar.google.com/calendar";
+          position = 105;
+          isEssential = true;
+        };
         "Gymbo Untis" = {
           id = "59834da1-1b04-4dd5-bd10-35a982a0a417";
           url = "https://borbeck-gym.webuntis.com/WebUntis/?school=borbeck-gym#/basic/login";
-          position = 105;
+          position = 106;
           isEssential = true;
         };
         "MGB Untis" = {
           id = "ca42d7d6-8602-44df-b52c-137a6c0b6175";
           url = "https://maedchengym-borbeck.webuntis.com/WebUntis/#/basic/login";
-          position = 106;
+          position = 107;
           isEssential = true;
         };
         "Logineo" = {
           id = "a2fb5eab-5f36-413c-a680-2679f17f87e6";
           url = "https://164859.logineonrw-lms.de/login/index.php";
-          position = 107;
+          position = 108;
           isEssential = true;
         };
       };
