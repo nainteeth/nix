@@ -36,16 +36,16 @@
         "browser.urlbar.suggest.bookmark" = false;
         "browser.urlbar.suggest.openpage" = false;
         "browser.urlbar.suggest.topsites" = false;
-        "browser.tabs.allow_transparent_browser" = true;
-        "zen.widget.linux.transparency" = true;
-        "zen.view.grey-out-inactive-windows" = false;
+        # "browser.tabs.allow_transparent_browser" = true;
+        # "zen.widget.linux.transparency" = true;
+        # "zen.view.grey-out-inactive-windows" = false;
         "zen.window-sync.enabled" = true;
       };
 
       # Zen Mods - UUIDs vom Zen Theme Store
-      mods = [
-        "642854b5-88b4-4c40-b256-e035532109df" # Zen Glass (transparent)
-      ];
+      # mods = [
+      # "642854b5-88b4-4c40-b256-e035532109df" # Zen Glass (transparent)
+      # ];
 
       search = {
         force = true;
