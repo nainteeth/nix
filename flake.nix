@@ -61,6 +61,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.${username} = import ./home/hosts/${hostname}/${hostname}.nix;
+                backupFileExtension = "backup";
 
                 extraSpecialArgs = {
                   inherit

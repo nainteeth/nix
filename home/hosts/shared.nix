@@ -14,7 +14,7 @@
     # ../modules/noctalia.nix
     ../modules/waybar.nix
     ../modules/wofi.nix
-    ../modules/mako.nix
+    # ../modules/mako.nix
     ../modules/waypaper.nix
     ../modules/themes.nix
 
@@ -214,7 +214,6 @@
     packages = [
       "com.discordapp.Discord"
       "com.bambulab.BambuStudio"
-      # "io.github.ryubing.Ryujinx"
     ];
     overrides = {
       "com.discordapp.Discord" = {
@@ -238,18 +237,6 @@
           QT_SCALE_FACTOR = "1";
         };
       };
-      # "io.github.ryubing.Ryujinx" = {
-      #   Environment = {
-      #     SDL_VIDEODRIVER = "x11";
-      #   };
-      #   Context.devices = [
-      #     "all"
-      #     "input"
-      #   ];
-      #   Context.filesystems = [
-      #     "/dev/bus/usb"
-      #   ];
-      # };
     };
     remotes = [
       {
