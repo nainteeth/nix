@@ -18,7 +18,6 @@
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
       };
     };
-    libinput.enable = true;
   };
 
   boot.loader.grub = {

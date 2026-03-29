@@ -58,11 +58,17 @@
   };
 
   services = {
+    libinput.enable = true;
     tumbler.enable = true;
     gvfs.enable = true;
     flatpak.enable = true;
     printing.enable = true;
     udev.packages = [ pkgs.game-devices-udev-rules ];
+    xserver.enable = true;
+    xserver.xkb = {
+      layout = "de";
+      variant = "";
+    };
     pipewire = {
       enable = true;
       alsa.support32Bit = true;
