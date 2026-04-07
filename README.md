@@ -56,7 +56,7 @@ Both `system/` and `home/` follow the same layout:
 
 4. Install Home Manager:
     ```bash
-    nix profile install nixpkgs#home-manager
+    nix profile add nixpkgs#home-manager
     ```
 
 5. Clone the repository:
@@ -67,7 +67,7 @@ Both `system/` and `home/` follow the same layout:
 
 6. Apply the home configuration:
     ```bash
-    home-manager switch --flake .#home
+    home-manager switch --flake .#standalone
     ```
 
 ## Configure GitHub SSH Access
