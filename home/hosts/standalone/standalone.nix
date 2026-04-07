@@ -8,6 +8,8 @@
   imports = [
     # DO NOT IMPORT shared.nix HERE
     ../../modules/neovim.nix
+    ../../modules/kitty.nix
+    ../../modules/devenv.nix
   ];
 
   home.username = username;
