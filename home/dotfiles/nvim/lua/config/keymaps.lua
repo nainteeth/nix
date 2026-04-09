@@ -27,6 +27,6 @@ map("n", "<leader>wv", "<C-w>v", { desc = "Window split vertical" })
 map("n", "<leader>ör", ":CellularAutomaton make_it_rain<CR>", { desc = "Make it rain" })
 map("n", "<leader>ög", ":CellularAutomaton game_of_life<CR>", { desc = "Game of life" })
 
--- auswahl beibehalten nach indent
+-- Auswahl beibehalten nach indent
 map("v", "<", "<gv")
 map("v", ">", ">gv")
