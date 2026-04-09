@@ -1,14 +1,7 @@
 {
   pkgs,
-  config,
-  username,
   ...
 }:
-let
-  mkOutOfStoreSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
-  repoDir = "/home/${username}/nix";
-  configDir = "${repoDir}/home/dotfiles";
-in
 {
   programs.neovim = {
     enable = true;
@@ -91,6 +84,8 @@ in
       nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
 
+      lazygit
+
       # Sprachserver
       jdt-language-server # Java
       nil # Nix
@@ -103,6 +98,10 @@ in
       ripgrep
       fd
     ];
-    file.".config/nvim".source = mkOutOfStoreSymlink "${configDir}/nvim";
+  };
+
+  xdg.configFile."nvim" = {
+    source = ../dotfiles/nvim;
+    recursive = true;
   };
 }

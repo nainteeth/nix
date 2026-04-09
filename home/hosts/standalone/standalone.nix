@@ -9,6 +9,7 @@
     # DO NOT IMPORT shared.nix HERE
     ../../modules/neovim.nix
     ../../modules/devenv.nix
+    ../../modules/tmux.nix
   ];
 
   home.username = username;

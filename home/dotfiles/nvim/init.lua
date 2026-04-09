@@ -90,6 +90,26 @@ require("kanagawa").setup({ transparent = true })
 require("onedark").setup({ style = "dark", transparent = true })
 
 vim.cmd.colorscheme(currentTheme)
+-- Bold Text ist gut
+local bold_groups = {
+    "Keyword",
+    "Statement",
+    "Condition",
+    "Repeat",
+    "Exception",
+    "Label",
+    "Operator",
+    "Function",
+    "Type",
+    "StorageClass",
+    "Structure",
+    "Typedef"
+}
+for _, group in ipairs(bold_groups) do
+    local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+    hl.bold = true
+    vim.api.nvim_set_hl(0, group, hl)
+end
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })

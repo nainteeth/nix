@@ -36,6 +36,9 @@
     }@inputs:
     let
       username = "nainteeth";
+      repoDir = "/home/${username}/nix";
+      configDir = "${repoDir}/home/dotfiles";
+      symlink = config: path: config.lib.file.mkOutOfStoreSymlink "${configDir}/${path}";
 
       mkSystem =
         hostname:
@@ -68,6 +71,7 @@
                     inputs
                     hostname
                     username
+                    symlink
                     zen-browser
                     nix-flatpak
                     # noctalia
@@ -89,6 +93,7 @@
               inputs
               hostname
               username
+              symlink
               ;
           };
           modules = [ ./home/hosts/${hostname}/${hostname}.nix ];
