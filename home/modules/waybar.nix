@@ -1,15 +1,11 @@
 {
-  config,
-  username,
   pkgs,
+  symlink,
+  config,
   ...
 }:
-let
-  mkOutOfStoreSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
-  configDir = "/home/${username}/nix/home/dotfiles";
-in
 {
   home.packages = with pkgs; [ waybar ];
 
-  home.file.".config/waybar".source = mkOutOfStoreSymlink "${configDir}/waybar";
+  home.file.".config/waybar".source = symlink config "waybar";
 }

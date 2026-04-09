@@ -1,14 +1,9 @@
 {
   pkgs,
+  symlink,
   config,
-  username,
   ...
 }:
-let
-  mkOutOfStoreSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
-  repoDir = "/home/${username}/nix";
-  configDir = "${repoDir}/home/dotfiles";
-in
 {
   programs.helix = {
     enable = true;
@@ -38,6 +33,6 @@ in
       markdown-oxide
     ];
 
-    file.".config/helix".source = mkOutOfStoreSymlink "${configDir}/helix";
+    file.".config/helix".source = symlink config "helix";
   };
 }

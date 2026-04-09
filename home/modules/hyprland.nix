@@ -1,13 +1,9 @@
 {
-  config,
-  username,
   pkgs,
+  symlink,
+  config,
   ...
 }:
-let
-  mkOutOfStoreSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
-  configDir = "/home/${username}/nix/home/dotfiles";
-in
 {
 
   programs.hyprshot = {
@@ -16,7 +12,7 @@ in
   };
 
   home = {
-    file.".config/hypr".source = mkOutOfStoreSymlink "${configDir}/hypr";
+    file.".config/hypr".source = symlink config "hypr";
     packages = with pkgs; [
       hypridle
       hyprlock
