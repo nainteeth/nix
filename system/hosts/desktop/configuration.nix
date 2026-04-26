@@ -20,6 +20,7 @@
     input-remapper
     polkit_gnome
     ryubing
+    heroic
   ];
 
   programs.steam = {
