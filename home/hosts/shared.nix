@@ -9,12 +9,12 @@
 }:
 {
   imports = [
-    ../modules/zen-browser.nix
+    ../modules/firefox.nix
 
     # ../modules/noctalia.nix
     ../modules/waybar.nix
     ../modules/wofi.nix
-    # ../modules/mako.nix
+    ../modules/mako.nix
     ../modules/waypaper.nix
     ../modules/themes.nix
 

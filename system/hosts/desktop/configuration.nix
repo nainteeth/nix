@@ -20,25 +20,6 @@
     input-remapper
     polkit_gnome
     ryubing
-    (makeDesktopItem {
-      name = "ryubing";
-      desktopName = "Ryubing (Native)";
-      genericName = "Nintendo Switch Emulator";
-      # This 'exec' includes environment fixes to prevent crashes
-      exec = "env mesa_glthread=false SDL_VIDEODRIVER=x11 ryujing";
-      icon = "ryubinx";
-      terminal = false;
-      categories = [
-        "Game"
-        "Emulator"
-      ];
-      keywords = [
-        "switch"
-        "nintendo"
-        "pokemon"
-        "odyssey"
-      ];
-    })
   ];
 
   programs.steam = {
@@ -96,14 +77,14 @@
       SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", MODE="0666", GROUP="input"
       SUBSYSTEM=="usb", ATTRS{idVendor}=="3434", MODE="0666", GROUP="input"
 
-      # 8BitDo Ultimate 2.4G Wireless Receiver
-      SUBSYSTEM=="usb", ATTR{idVendor}=="2dc8", ATTR{idProduct}=="3106", MODE="0660", GROUP="input"
-      SUBSYSTEM=="usb", ATTR{idVendor}=="2dc8", ATTR{idProduct}=="3109", MODE="0660", GROUP="input"
-      # 8BitDo Ultimate Bluetooth 
-      SUBSYSTEM=="usb", ATTR{idVendor}=="2dc8", ATTR{idProduct}=="6006", MODE="0660", GROUP="input"
-      # 8BitDo Ultimate (Wired)
-      SUBSYSTEM=="usb", ATTR{idVendor}=="2dc8", ATTR{idProduct}=="3107", MODE="0660", GROUP="input"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="057e", ATTRS{idProduct}=="2009", MODE="0660", TAG+="uaccess"
     '';
+  };
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
   };
 
   security = {
@@ -140,11 +121,6 @@
         7011
       ];
     };
-  };
-
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
   };
 
   systemd.user.services.polkit-gnome-authentication-agent-1 = {

@@ -9,10 +9,14 @@
 }:
 {
   imports = [
+    ## Display-Manager:
+    # ../modules/sddm.nix
+    ../modules/ly.nix
+
+    ## Compositor:
     ../modules/hyprland.nix
     # ../modules/wayfire.nix
-    # ../modules/ly.nix
-    ../modules/sddm.nix
+    # ../modules/cosmic.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -33,7 +37,6 @@
     libnotify
     gammastep
     xdg-utils
-    kdePackages.kdeconnect-kde
     kdePackages.kio-admin
     gimp3-with-plugins
     bibata-cursors
@@ -46,7 +49,7 @@
     nix-ld.enable = true; # needed because microsoft is incapable of making working installer
     java.enable = true;
     dconf.enable = true;
-    ssh.startAgent = true;
+    # ssh.startAgent = true; # this needs to be commented if you are using cosmic
     thunar = {
       enable = true;
       plugins = with pkgs; [
@@ -100,7 +103,6 @@
       "wheel"
       "networkmanager"
       "video"
-      "audio"
       "plugdev"
       "input"
       "uinput"
