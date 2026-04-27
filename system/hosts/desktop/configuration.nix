@@ -23,6 +23,12 @@
     heroic
   ];
 
+  # See wiki.nixos.org/wiki/Appimage
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   programs.steam = {
     enable = true;
     package = pkgs.steam.override {
