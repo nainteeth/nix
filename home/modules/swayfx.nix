@@ -8,6 +8,7 @@ in
     grim
     slurp
     wl-clipboard
+    hyprpicker
   ];
   wayland.windowManager.sway = {
     enable = true;
