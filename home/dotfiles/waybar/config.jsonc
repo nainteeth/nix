@@ -3,7 +3,7 @@
   "height": 30,
   "spacing": 0,
   "modules-left": [
-    "hyprland/workspaces"
+    "sway/workspaces"
   ],
   "modules-center": [
     "clock"
@@ -19,9 +19,9 @@
     "on-click": "~/nix/home/dotfiles/waybar/scripts/hyprpicker-with-notifi.sh",
     "tooltip": false
   },
-  "hyprland/workspaces": {
+  "sway/workspaces": {
     "disable-scroll": true,
-    "format": "{icon} {windows}",
+    "format": "{name} {windows}",
     "format-window-separator": " ",
     "window-rewrite-default": "󰏗",
     "window-rewrite": {

@@ -21,7 +21,8 @@
     ../modules/neovim.nix
     # ../modules/helix.nix
 
-    ../modules/hyprland.nix
+    # ../modules/hyprland.nix
+    ../modules/swayfx.nix
     # ../modules/wayfire.nix
 
     ../modules/kitty.nix
@@ -64,16 +65,15 @@
       # System utilities
       btop
       htop
-      # fastfetch
-      nitch # minimal, aesthetic fetch
-      onefetch # git repo fetch
-      cpufetch # CPU fetch
+      nitch
+      onefetch
+      cpufetch
 
       # Archive tools
-      unzip # .zip extraction
-      zip # .zip creation
-      p7zip # for a bunch of other formats
-      unrar # .rar extraction
+      unzip
+      zip
+      p7zip
+      unrar
 
       # CLI tools
       ripgrep
@@ -82,17 +82,17 @@
       curl
 
       # r/unixporn eye candy
-      pipes # run with: pipes.sh
-      cmatrix # matrix rain
-      cbonsai # grow bonsai trees
-      lolcat # rainbow text
-      figlet # ASCII banners
-      toilet # colored ASCII art
-      asciiquarium # terminal aquarium
-      tty-clock # terminal clock
-      sl # steam locomotive (typo punishment)
-      cowsay # talking cow
-      fortune # random quotes
+      pipes
+      cmatrix
+      cbonsai
+      lolcat
+      figlet
+      toilet
+      asciiquarium
+      tty-clock
+      sl
+      cowsay
+      fortune
 
       # Other
       keepassxc
@@ -110,43 +110,41 @@
       # Theming
       adwaita-icon-theme
       gnome-themes-extra
+      bibata-cursors
     ];
+
     sessionVariables = {
       MOZ_ENABLE_WAYLAND = "1";
       QT_QPA_PLATFORM = "wayland";
       SDL_VIDEODRIVER = "wayland";
       XDG_SESSION_TYPE = "wayland";
-      XCURSOR_THEME = "Adwaita";
-      XCURSOR_SIZE = "24";
     };
+  };
+
+  home.pointerCursor = {
+    name = "Bibata-Modern-Classic";
+    package = pkgs.bibata-cursors;
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
   };
 
   gtk = {
     enable = true;
-    gtk4.theme = null;
-    theme.name = "Adwaita";
-    iconTheme.name = "Adwaita";
-    cursorTheme = {
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+    iconTheme = {
       name = "Adwaita";
       package = pkgs.adwaita-icon-theme;
-      size = 24;
     };
   };
-  xdg.configFile = {
-    "gtk-3.0/settings.ini".text = ''
-      [Settings]
-      gtk-theme-name=Adwaita
-      gtk-icon-theme-name=Adwaita
-      gtk-cursor-theme-name=Adwaita
-      gtk-cursor-theme-size=24
-    '';
-    "gtk-4.0/settings.ini".text = ''
-      [Settings]
-      gtk-theme-name=Adwaita
-      gtk-icon-theme-name=Adwaita
-      gtk-cursor-theme-name=Adwaita
-      gtk-cursor-theme-size=24
-    '';
+
+  qt = {
+    enable = true;
+    platformTheme.name = "adwaita";
+    style.name = "adwaita-dark";
   };
 
   programs = {
@@ -170,13 +168,10 @@
         rebuild = "git -C ~/nix add . && sudo nixos-rebuild switch --flake ~/nix#$(hostname)";
       };
     };
-
-    # fuzzy find ctrl r (bash history)
     fzf = {
       enable = true;
       enableBashIntegration = true;
     };
-    # fancy ls
     eza = {
       enable = true;
       enableBashIntegration = true;
@@ -209,9 +204,10 @@
       };
     };
   };
+
   services.flatpak = {
     enable = true;
-    uninstallUnmanaged = false; # Only manages user packages
+    uninstallUnmanaged = false;
     packages = [
       "com.discordapp.Discord"
       "com.bambulab.BambuStudio"
@@ -245,5 +241,16 @@
         location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
       }
     ];
+  };
+  xdg = {
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "inode/directory" = "thunar.desktop";
+        "text/plain" = "org.gnome.TextEditor.desktop";
+        "text/markdown" = "org.gnome.TextEditor.desktop";
+        "text/x-script" = "org.gnome.TextEditor.desktop";
+      };
+    };
   };
 }

@@ -14,13 +14,15 @@
     ../modules/ly.nix
 
     ## Compositor:
-    ../modules/hyprland.nix
+    # ../modules/hyprland.nix
+    ../modules/swayfx.nix
     # ../modules/wayfire.nix
     # ../modules/cosmic.nix
   ];
 
   environment.systemPackages = with pkgs; [
     vim
+    gnome-text-editor
     mullvad-vpn
     networkmanager
     networkmanagerapplet
@@ -90,6 +92,12 @@
       enable = true;
       enable32Bit = true;
     };
+  };
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   networking.networkmanager.enable = true;
