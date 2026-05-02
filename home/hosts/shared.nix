@@ -123,6 +123,7 @@
 
   gtk = {
     enable = true;
+    gtk4.theme = null;
     theme.name = "Adwaita";
     iconTheme.name = "Adwaita";
     cursorTheme = {

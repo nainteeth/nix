@@ -21,6 +21,7 @@
     polkit_gnome
     ryubing
     heroic
+    protonplus
   ];
 
   programs.steam = {

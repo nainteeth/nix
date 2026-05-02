@@ -76,7 +76,10 @@
       cellular-automaton-nvim
     ];
 
-    extraLuaConfig = ''
+    withPython3 = true;
+    withRuby = false;
+
+    initLua = ''
       do
         -- options.lua
         vim.g.mapleader = " "
