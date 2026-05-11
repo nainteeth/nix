@@ -99,16 +99,16 @@ in
 
       gaps = {
         inner = 8;
-        outer = 16;
+        outer = 8;
       };
 
       window = {
-        border = 2;
+        border = 1;
         titlebar = false;
       };
 
       floating = {
-        border = 2;
+        border = 1;
         titlebar = false;
       };
 
@@ -136,8 +136,6 @@ in
       ];
 
       startup = [
-        { command = "kitty --class lazygit-nix sh -c 'cd ~/nix && lazygit'"; }
-        { command = "keepassxc"; }
         { command = "mako"; }
         { command = "nm-applet"; }
         { command = "swww-daemon"; }
@@ -223,7 +221,7 @@ in
     extraConfig = ''
       # Animations are added in a later update
       # animations enable 
-      corner_radius 18
+      corner_radius 8
 
       blur enable
       blur_passes 3

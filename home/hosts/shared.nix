@@ -43,6 +43,8 @@
       # Terminal
       starship
 
+      devenv
+
       gh
       nodejs
 
@@ -93,6 +95,8 @@
       sl
       cowsay
       fortune
+
+      eclipses.eclipse-java
 
       # Other
       keepassxc
